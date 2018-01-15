@@ -1,0 +1,52 @@
+<?php require('template/header.phtml') ?>
+
+<body>
+<div class="container">
+    <p><strong>Log in or sign up:</strong></p>
+    <form name="login" method="post" action="login.php">
+
+        <div class="container">
+
+<!--            Login-->
+        <div>
+            <h3>Login</h3>
+            <label>username:
+                <input type="text" name="name" required></label><br>
+
+            <label>password:
+                <input type="password" name="password" required></label><br>
+
+            <input type="submit" name="login" value="Login" class="btn btn-primary">
+        </div>
+<!--           Passwords MUST be encrypted! -->
+
+            <!--            Login-->
+            <div>
+                <h3>Sign up</h3>
+
+                <label>name:
+                    <input type="text" name="name" required></label><br>
+
+                <label>username:
+                    <input type="text" name="username" required></label><br>
+
+                <label>password:
+                    <input type="password" name="password" required></label><br>
+
+                <label>email:
+                    <input type="text" name="email" required></label><br>
+            </div>
+            <!--           Passwords MUST be encrypted! -->
+            <div>
+        <div>
+
+            <input type="reset" name="sign up" value="Sign-up" class="btn btn-primary">
+        </div>
+
+        </div>
+
+    </form>
+
+</div>
+</body>
+<?php require('template/footer.phtml') ?>

@@ -1,0 +1,63 @@
+<?php require('template/header.phtml') ?>
+<div class="container">
+    <h3>Browse</h3>
+    <form>
+        <div class="form-group">
+            <label for="carDropMake">Car make</label>
+            <select id="carDrop">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="carDropPrice">Price</label>
+            <select id="carDropPrice">
+                <option value="<1000"><1000</option>
+                <option value="<5000"><5000</option>
+                <option value="<10000"><10,000</option>
+                <option value="<20000"><20,000</option>
+                <option value="<50000"><50,000</option>
+                <option value="<100000"><100,000</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="carDropColour">Color</label>
+            <select id="carDropColour">
+                <option value="black"> Black</option>
+                <option value="white"> White</option>
+                <option value="grey"> Grey</option>
+                <option value="red"> Red</option>
+                <option value="blue"> Blue</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+        <table class="datatable">
+            <thead> <tr> <th> title </th> <th> price </th> <th> color </th> <th> description </th> <th> photo </th>  </tr>
+            </thead>
+
+            <tbody>
+            <?php foreach ($view->addDataSet as $addData) {
+                echo
+//                    '<tr> <td>' .   $addData->getAdvertID() .
+                    '</td> <td>' . $addData->getTitle() .
+                    '</td> <td>' . $addData->getPrice() .
+                    '</td> <td>' . $addData->getDescription() .
+                    '</td> <td>' . $addData->getColor() .
+                    '<td>' . '<img src="images/' . $addData->getPhotoName() . ' " alt="no picture available" />' . '</td>' .
+                    '</td> </td> </tr>';
+            } ?>
+            </tbody>
+        </table>
+
+
+<?php require('template/footer.phtml') ?>

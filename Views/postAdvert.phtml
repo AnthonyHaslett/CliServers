@@ -1,0 +1,37 @@
+<?php require('template/header.phtml') ?>
+    <body>
+
+        <h3>Post an ad!</h3>
+        <p><strong>Please provide, a title, description, and an image of your product</strong></p>
+        <form name="postAd" method="post" action="postAdvert.php">
+
+            <div class="container">
+                <div>
+                    <label>Make of Car<br>
+                        <input type="text" name="title" required></label><br>
+
+                    <label>Price(£) <br>
+                        <input type="text" name="price" required></label><br>
+
+                    <label>Color<br>
+                        <input type="text" name="color" required></label><br>
+
+                    <label>Description<br>
+                    <textarea rows="4" cols="50" required></textarea><br>
+<!--                        Need to do a check again the file size, and actual size.-->
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Select image to upload:
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Upload Image" name="submit">
+                        </form>
+                </div>
+
+                <div>
+                    <input type="submit" name="submit" value="submit" class="btn btn-primary">
+                </div>
+
+            </div>
+
+        </form>
+    </body>
+<?php require('template/footer.phtml') ?>

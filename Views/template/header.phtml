@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Anthony Haslett stc687">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/my-style.css" rel="stylesheet">
+
+    <title>Adverts Website - <?php echo $view->pageTitle; ?></title>
+</head>
+
+<body role=""document">
+
+<div class="container">
+        <div  class="row">
+            <div id="title" class="col-xs-12">
+                <img src="images/cars-com.png" alt="Cars.com" />
+                <div class="pull-right"> <h1><?php echo $view->pageTitle ?> </h1></div>
+            </div>
+        </div>
+
+
+    <div class="row">
+
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.php">Cars.com</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Home</a></li>
+<!--                    <li><a href="page1.php">Page1</a></li>-->
+                    <li><a href="browse.php">Browse</a></li>
+                    <li><a href="postAdvert.php">Post Advert</a></li>
+                    <li><a href="wishlist.php">Wish list</a></li>
+                    <li><a href="contactUs.php">Contact us</a></li>
+                    <li><a href="login.php">Sign in</a></li>
+                </ul>
+
+                <input type="text" name="search" placeholder="Search..">
+<!--                <a href="login.php" class="btn btn-info" role="button">Sign in</a>-->
+            </div>
+        </nav>
+
+    <div id="content" class="col-xs-6 col-sm-9 col-md-10">
+
+
+
