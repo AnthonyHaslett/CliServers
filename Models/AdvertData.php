@@ -10,7 +10,7 @@ class AdvertData {
         $this->_price = $dbRow['price'];
         $this->_description = $dbRow['description'];
         $this->_photoName = $dbRow['photo_name'];
-        $this->_photoName = $dbRow['color'];
+        $this->_color = $dbRow['color'];
         $this->_FK_userID = $dbRow['FK_userId'];
     }
 

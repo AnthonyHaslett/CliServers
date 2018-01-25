@@ -1,14 +1,14 @@
 <?php require('template/header.phtml') ?>
 
-<body>
+
 <div class="container">
     <p><strong>Log in or sign up:</strong></p>
-    <form name="login" method="post" action="login.php">
+    <form name="login" method="POST" action="login.php">
 
         <div class="container">
 
 <!--            Login-->
-        <div>
+        <div id="loginBox">
             <h3>Login</h3>
             <label>username:
                 <input type="text" name="name" required></label><br>
@@ -21,7 +21,7 @@
 <!--           Passwords MUST be encrypted! -->
 
             <!--            Login-->
-            <div>
+            <div id="signUpBox">
                 <h3>Sign up</h3>
 
                 <label>name:
@@ -48,5 +48,5 @@
     </form>
 
 </div>
-</body>
+
 <?php require('template/footer.phtml') ?>

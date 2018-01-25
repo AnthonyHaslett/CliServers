@@ -24,8 +24,22 @@ class UserDataSet {
         return $dataSet;
     }
 
+    public function fetchAllUserNames() {
+        $sqlQuery = 'SELECT username FROM users';
+
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+        $statement->execute(); // execute the PDO statement
+
+        $dataSet = [];
+        while ($row = $statement->fetch()) {
+            $dataSet[] = new UserData($row);
+        }
+        return $dataSet;
+    }
+
+
     public function addUsers() {
-        $sqlQuery = 'INSERT INTO users (userId,username,password,email,address) VALUES (:userId,:username,:password,:email,:address)';
+        $sqlQuery = 'INSERT INTO users (userId,username,password,email,address) VALUES (userId,username,password,email,address)';
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
