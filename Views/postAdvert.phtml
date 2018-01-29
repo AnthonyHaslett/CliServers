@@ -8,16 +8,26 @@
             <div class="container">
                 <div>
                     <label>Make of Car<br>
-                        <input type="text" name="title" required></label><br>
+                        <input type="text" name="title" required></label><br/>
 
-                    <label>Price(£) <br>
-                        <input type="text" name="price" required></label><br>
+                    <label for="carDropMake">Make of Car</label>
+                    <select name="select" id="carDropMake">
+                        <option value="Mercedes"> Mercedes</option>
+                        <option value="BMW"> BMW</option>
+                        <option value="Tesla"> Tesla</option>
+                        <option value="Ford"> Ford</option>
+                        <option value="Audi"> Audi</option>
+                    </select>
+                    <br/>
 
-                    <label>Color<br>
-                        <input type="text" name="color" required></label><br>
+                    <label>Price(£) <br/>
+                        <input type="text" name="price" required></label><br/>
 
-                    <label>Description<br>
-                    <textarea rows="4" cols="50" required></textarea><br>
+                    <label>Color<br/>
+                        <input type="text" name="color" required></label><br/>
+
+                    <label>Description<br/>
+                    <textarea rows="4" cols="50" required></textarea><br/>
 <!--                        Need to do a check again the file size, and actual size.-->
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select image to upload:

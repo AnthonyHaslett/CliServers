@@ -32,5 +32,4 @@ class UserData {
         return $this->_address;
     }
 
-
 }

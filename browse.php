@@ -6,6 +6,8 @@ $view->pageTitle = 'Browse';
 
 $advertDataSet = new AdvertDataSet();
 $view->advertDataSet = $advertDataSet->fetchAllAdverts();
+//$advertDataSett = new AdvertDataSet();
+//$view->advertDataSet = $advertDataSett->fetchAllAudis();
 
 //$userDataSet = new UserDataSet();
 //$view->userDataSet = $userDataSet->fetchAllUsers();
