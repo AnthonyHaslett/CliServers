@@ -3,7 +3,7 @@
 
         <h3>Post an ad!</h3>
         <p><strong>Please provide, a title, description, and an image of your product</strong></p>
-        <form name="postAd" method="post" action="postAdvert.php">
+        <form name="postAd" method="post" action="../postAdvert.php">
 
             <div class="container">
                 <div>
@@ -27,13 +27,17 @@
                         <input type="text" name="color" required></label><br/>
 
                     <label>Description<br/>
-                    <textarea rows="4" cols="50" required></textarea><br/>
+<!--                    <textarea rows="4" cols="50" required></textarea><br/>-->
+                            <input type="text" name="description" required></label><br/>
+
+
 <!--                        Need to do a check again the file size, and actual size.-->
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
+
+<!--                        <form action="upload.php" method="post" enctype="multipart/form-data">-->
                             Select image to upload:
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
-                        </form>
+                            <input type="text" name="photo_name" id="photo_name">
+                            <input type="file" value="Upload Image" name="submit">
+<!--                        </form>-->
                 </div>
 
                 <div>
@@ -43,5 +47,6 @@
             </div>
 
         </form>
+
     </body>
 <?php require('template/footer.phtml') ?>

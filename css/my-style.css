@@ -89,6 +89,22 @@ img {
     padding-bottom: 5px;
 }
 
+
+.card-title {
+    font-size:  24px;
+}
+
+.card-text{
+    font-size:  18px;
+}
+
+
+/*#filter{*/
+    /*background-color: #403f4c;*/
+    /*padding: 10px;*/
+
+/*}*/
+
 /*input[type=text] {*/
     /*width: 130px;*/
     /*-webkit-transition: width 0.4s ease-in-out;*/

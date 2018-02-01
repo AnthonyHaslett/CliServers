@@ -2,30 +2,32 @@
 
 
 <div class="container">
-    <p><strong>Log in or sign up:</strong></p>
-    <form name="login" method="POST" action="login.php">
 
-        <div class="container">
+    <h1><strong>Log in or sign up:</strong></h1>
 
-<!--            Login-->
-        <div id="loginBox">
-            <h3>Login</h3>
-            <label>username:
-                <input type="text" name="name" required></label><br>
 
-            <label>password:
-                <input type="password" name="password" required></label><br>
 
-            <input type="submit" name="login" value="Login" class="btn btn-primary">
-        </div>
-<!--           Passwords MUST be encrypted! -->
+        <form name="login" method="POST" action="login.php">
 
-            <!--            Login-->
+            <div id="loginBox">
+                <h3>Login</h3>
+                <label>username:
+                    <input type="text" name="username" required></label><br>
+
+                <label>password:
+                    <input type="password" name="password" required></label><br>
+
+                <input type="submit" name="login" value="Login" class="btn btn-primary">
+            </div>
+
+        </form>
+
+
+        <form name="signUp" method="POST" action="login.php">
+
             <div id="signUpBox">
-                <h3>Sign up</h3>
 
-                <label>name:
-                    <input type="text" name="name" required></label><br>
+                <h3>Sign up</h3>
 
                 <label>username:
                     <input type="text" name="username" required></label><br>
@@ -35,17 +37,15 @@
 
                 <label>email:
                     <input type="text" name="email" required></label><br>
+
+
+                <label>Address:
+                    <input type="text" name="address" required></label><br>
             </div>
-            <!--           Passwords MUST be encrypted! -->
-            <div>
-        <div>
 
-            <input type="reset" name="sign up" value="Sign-up" class="btn btn-primary">
-        </div>
+            <input type="submit" name="sign-up" value="sign-up" class="btn btn-primary">
 
-        </div>
-
-    </form>
+        </form>
 
 </div>
 

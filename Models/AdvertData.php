@@ -14,6 +14,63 @@ class AdvertData {
         $this->_FK_userID = $dbRow['FK_userId'];
     }
 
+    /**
+     * @param mixed $advertId
+     */
+    public function setAdvertId($advertId)
+    {
+        $this->_advertId = $advertId;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->_title = $title;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price)
+    {
+        $this->_price = $price;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->_description = $description;
+    }
+
+    /**
+     * @param mixed $photoName
+     */
+    public function setPhotoName($photoName)
+    {
+        $this->_photoName = $photoName;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->_color = $color;
+    }
+
+    /**
+     * @param mixed $FK_userID
+     */
+    public function setFKUserID($FK_userID)
+    {
+        $this->_FK_userID = $FK_userID;
+    }
+
+
     public function getAdvertID() {
         return $this->_advertId;
     }
@@ -41,4 +98,13 @@ class AdvertData {
     public function getFK_userID() {
         return $this->_FK_userID;
     }
+
+
+//    public function setTitle() {
+//        return $this->$_title= _title;
+//
+//
+//    }
+
+
 }

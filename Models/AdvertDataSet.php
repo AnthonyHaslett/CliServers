@@ -1,7 +1,7 @@
 <?php
 
-require_once ('Models/Database.php');
-require_once ('Models/AdvertData.php');
+require ('Database.php');
+require ('AdvertData.php');
 
 class AdvertDataSet {
     protected $_dbHandle, $_dbInstance;
@@ -40,20 +40,36 @@ class AdvertDataSet {
 
 
 
-    public function insertInto() {
+    public function insertAdvert($POST) {
 
-        $sqlQuery = "INSERT INTO users (title, price, description, photo_name, color)
-    VALUES ('".$_POST["title"]."','".$_POST["price"]."','".$_POST["description"]."','".$_POST["photo_name"]."','".$_POST["color"]."')";
+        $title = $POST["title"];
+        echo $title;
+        $price = $POST["price"];
+        $color = $POST["color"];
+        $description = $POST["description"];
+        $FK_userId = 4;//$POST["FK_userId"];
+        $photo_name = $POST["photo_name"];
+
+        $sqlQuery = "INSERT INTO adverts (title, price, description, FK_userId , photo_name, color) VALUES ('$title', $price,
+                    '$description', '$FK_userId', '$photo_name', '$color')";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-        $statement->execute(); // execute the PDO statement
-
+        if($statement->execute()){ //; // execute the PDO statement
+            echo 'success';} else {
+            echo 'false';
+        }
+   //     $statement->execute();
 //        $dataSet = [];
-//        while ($row = $statement->push()) {
+//        while ($row = $statement) {
 //            $dataSet[] = new AdvertData($row);
 //        }
+//   //, description, FK_userId , photo_name, color)
+      //  , $description, $FK_userId , $photo_name, $color
 //        return $dataSet;
+}
 
+
+public function textSearch($POST){
 
 }
 
