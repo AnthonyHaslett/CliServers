@@ -38,12 +38,42 @@ class UserDataSet {
     }
 
 
-//    public function addUsers() {
-//        $sqlQuery = 'INSERT INTO users (userId,username,password,email,address) VALUES (userId,username,password,email,address)';
-//
-//        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-//        $statement->execute(); // execute the PDO statement
-//    }
+    public function selectUser($POST) {
+
+        $username = $POST["username"];
+        $password = $POST["password"];
+
+//        $password = password_hash($password, PASSWORD_DEFAULT);
+
+
+
+//        if (password_verify($password, $hash)) {
+//            echo 'Password is valid!';
+//        } else {
+//            echo 'Invalid password.';
+//        }
+
+        $sqlQuery = "SELECT * FROM users WHERE username ='$username' And password = '$password'";
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+        $statement->execute(); // execute the PDO statement
+
+        $dataSet = [];
+        while ($row = $statement->fetch()) {
+            $dataSet[] = new UserData($row);
+        }
+
+
+        $_SESSION['userId'] = $dataSet[0]->getStudentID();
+//        echo  $_SESSION['userId'];
+
+        $_SESSION['username'] = $dataSet[0]->getUserName();
+        echo  '<h4>Welcome back  ' .$_SESSION['username'].'</h4>';
+
+
+        return $dataSet;
+    }
+
+
 
     public function insertUser($POST) {
 
@@ -51,13 +81,15 @@ class UserDataSet {
         echo $username;
 //        $userId = 0005;
         $password = $POST["password"];
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
         $email = $POST["email"];
         $address = $POST["address"];
 
         $sqlQuery = "INSERT INTO users (username, password, email , address) VALUES ('$username' , '$password', 
                     '$address','$email')";
+
+
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         if($statement->execute()){ //; // execute the PDO statement
@@ -91,14 +123,62 @@ public function userLogin($POST)
 
         //if the rows are greater than zero, log the user in. Else failed attempted
         if($row > 0){
-        echo 'login success';
-        session_start();
+
+            echo 'login success';
+
         $_SESSION['login_user']= $username;
         echo " SESSION ".$_SESSION['login_user'];
+
+        header("location: index.php"); // Redirecting To Other Page
 
     } else {
         echo ' false';
     }
+}
+
+
+    public function sessionCheck(){
+
+//        session_start();// Starting Session
+        $user_check=$_SESSION['login_user'];
+
+        $sqlquery = ("select username from users where username='$user_check'");
+
+        //Prepare the SQL query
+        $statement = $this->_dbHandle->prepare($sqlquery); // prepare a PDO statement
+
+        //Execute the SQL statement
+        $statement->execute();
+
+        $row = $statement->fetch();
+
+        $login_session =$row['userId'];
+
+        if(!isset($login_session)){
+           session_abort();
+            header('Location: login.php'); // Redirecting To Home Page
+        }
+        else{
+            session_start();
+        }
+        var_dump($statement);
+
+
+        echo '<p>' . 'Hello' . $_SESSION['login_user']  . '<p>' ;
+}
+
+
+    public function logout(){
+
+
+        if(session_destroy()) // Destroying All Sessions
+        {
+    //        header("Location: index.php"); // Redirecting To Home Page
+        }
+
+    }
+
+
 
 //    $rows = mysql_num_rows($sqlQuery);
 //
@@ -109,7 +189,7 @@ public function userLogin($POST)
 //        "Username or Password is invalid";
 //    }
 
-}
+//}
 
 
 

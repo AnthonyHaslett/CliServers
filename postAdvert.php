@@ -8,6 +8,8 @@ require ('Models/AdvertDataSet.php');
 
 $advertDataSet = new AdvertDataSet();
 
+//$userDataSet = new UserDataSet();
+
 //$form = $_POST;
 ////if(isset($_POST['submit'])) {
 //    $title = $_POST['title'];
@@ -16,10 +18,13 @@ $advertDataSet = new AdvertDataSet();
 //    $description = $_POST['description'];
 //    $photo_name = $_POST['photo_name'];
 ////}
+///
+
 
 if(isset($_POST['submit'])){
   //  var_dump($_POST);
   //  echo $_POST['title'];
+    session_start();
     $advertDataSet->insertAdvert($_POST);
 //    $advertDataSet->insertAdvert($_POST['submit']);
 

@@ -24,8 +24,8 @@ class AdvertDataSet {
         return $dataSet;
     }
 
-    public function fetchAllAudis() {
-        $sqlQuery = "SELECT * FROM adverts WHERE title = 'Audi' || 'audi' ";
+    public function fetchAllAudis($POST) {
+        $sqlQuery = "SELECT * FROM adverts WHERE title = 'Audi', price = 'audi' ";
     echo print_r($sqlQuery);
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
@@ -43,7 +43,7 @@ class AdvertDataSet {
     public function insertAdvert($POST) {
 
         $title = $POST["title"];
-        echo $title;
+//        echo $title;
         $price = $POST["price"];
         $color = $POST["color"];
         $description = $POST["description"];
@@ -55,7 +55,10 @@ class AdvertDataSet {
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         if($statement->execute()){ //; // execute the PDO statement
-            echo 'success';} else {
+            echo '<h4>Advert Post Successful</h4>';
+
+
+        } else {
             echo 'false';
         }
    //     $statement->execute();

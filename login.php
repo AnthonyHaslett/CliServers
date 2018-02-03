@@ -1,9 +1,8 @@
 <?php
-
 $view = new stdClass();
 $view->pageTitle = 'Login';
 
-require_once('Views/login.phtml');
+require ('Views/login.phtml');
 require ('Models/UserDataSet.php');
 
 $userDataSet = new UserDataSet();
@@ -13,6 +12,8 @@ if (isset ($_POST['sign-up']) ){
 }
 
 else if (isset ($_POST['login']) ){
-        $userDataSet->userLogin($_POST);
+    $userDataSet->selectUser($_POST);
+//    header('Location: '.$_SERVER['REQUEST_URI']);
+    //    $userDataSet->userLogin($_POST);
     }
 

@@ -10,82 +10,116 @@
     <schema id="4" parent="1" name="stc687"/>
     <schema id="5" parent="1" name="stc687_workshop"/>
     <table id="6" parent="2" name="adverts"/>
-    <table id="7" parent="2" name="users"/>
-    <table id="8" parent="2" name="wishlist"/>
-    <column id="9" parent="6" name="advertId">
+    <table id="7" parent="2" name="contact_us"/>
+    <table id="8" parent="2" name="users"/>
+    <table id="9" parent="2" name="wishlist"/>
+    <column id="10" parent="6" name="advertId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="10" parent="6" name="title">
+    <column id="11" parent="6" name="title">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="11" parent="6" name="price">
+    <column id="12" parent="6" name="price">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="12" parent="6" name="description">
+    <column id="13" parent="6" name="description">
       <Position>4</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="13" parent="6" name="FK_userId">
+    <column id="14" parent="6" name="FK_userId">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="14" parent="6" name="photo_name">
+    <column id="15" parent="6" name="photo_name">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="15" parent="6" name="color">
+    <column id="16" parent="6" name="color">
       <Position>7</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <index id="16" parent="6" name="FK_userId">
+    <index id="17" parent="6" name="FK_userId">
       <ColNames>FK_userId</ColNames>
     </index>
-    <key id="17" parent="6" name="PRIMARY">
+    <key id="18" parent="6" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>advertId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="18" parent="7" name="username">
-      <Position>1</Position>
-      <DataType>tinytext|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="19" parent="7" name="password">
-      <Position>2</Position>
-      <DataType>tinytext|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="20" parent="7" name="email">
-      <Position>3</Position>
-      <DataType>tinytext|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="21" parent="7" name="address">
-      <Position>4</Position>
-      <DataType>tinytext|0</DataType>
-    </column>
-    <column id="22" parent="7" name="userId">
-      <Position>5</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="23" parent="7" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>userId</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="24" parent="8" name="wishlistId">
+    <column id="19" parent="7" name="contactId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="25" parent="8" name="PRIMARY">
+    <column id="20" parent="7" name="fk_userId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="7" name="fk_name">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="7" name="fk_address">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="7" name="fk_email">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="7" name="enquiry">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="25" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>contactId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="8" name="email">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="8" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="28" parent="8" name="userId">
+      <Position>3</Position>
+      <DataType>int(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="8" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="30" parent="8" name="password">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="31" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="9" name="wishlistId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <key id="33" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>wishlistId</ColNames>
       <Primary>1</Primary>
