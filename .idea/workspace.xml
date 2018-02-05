@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c882ea3-ef3c-4369-b003-e9060c5d491b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6f7cccac-3747-40ff-868d-468411fa460f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6f7cccac-3747-40ff-868d-468411fa460f.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/AdvertDataSet.php" afterPath="$PROJECT_DIR$/Models/AdvertDataSet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/UserData.php" afterPath="$PROJECT_DIR$/Models/UserData.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/UserDataSet.php" afterPath="$PROJECT_DIR$/Models/UserDataSet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/admin.phtml" afterPath="$PROJECT_DIR$/Views/admin.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/browse.phtml" afterPath="$PROJECT_DIR$/Views/browse.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/index.phtml" afterPath="$PROJECT_DIR$/Views/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/login.phtml" afterPath="$PROJECT_DIR$/Views/login.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browse.php" afterPath="$PROJECT_DIR$/browse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contactUs.php" afterPath="$PROJECT_DIR$/contactUs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page1.php" afterPath="$PROJECT_DIR$/page1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postAdvert.php" afterPath="$PROJECT_DIR$/postAdvert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wishlist.php" afterPath="$PROJECT_DIR$/wishlist.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -418,7 +401,7 @@
       <workItem from="1517756090971" duration="3255000" />
       <workItem from="1517842704410" duration="4572000" />
       <workItem from="1517848590637" duration="1515000" />
-      <workItem from="1517850334718" duration="8622000" />
+      <workItem from="1517850334718" duration="8632000" />
     </task>
     <task id="LOCAL-00001" summary="repeatable div">
       <created>1516873044331</created>
@@ -455,11 +438,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517682215548</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="repeatable div">
+      <created>1517858964173</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1517858964173</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203772000" />
+    <option name="totallyTimeSpent" value="203782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
