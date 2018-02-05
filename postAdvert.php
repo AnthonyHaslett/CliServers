@@ -1,12 +1,15 @@
 <?php
+session_start();
 $view = new stdClass();
 $view->pageTitle = 'Post an ad!';
 require_once('Views/postAdvert.phtml');
 require ('Models/AdvertDataSet.php');
+//require ('Models/UserDataSet.php');
 
 
 
 $advertDataSet = new AdvertDataSet();
+//$userDataSet = new UserDataSet();
 
 //$userDataSet = new UserDataSet();
 
@@ -24,7 +27,7 @@ $advertDataSet = new AdvertDataSet();
 if(isset($_POST['submit'])){
   //  var_dump($_POST);
   //  echo $_POST['title'];
-    session_start();
+
     $advertDataSet->insertAdvert($_POST);
 //    $advertDataSet->insertAdvert($_POST['submit']);
 

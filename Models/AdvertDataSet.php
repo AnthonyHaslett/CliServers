@@ -47,28 +47,19 @@ class AdvertDataSet {
         $price = $POST["price"];
         $color = $POST["color"];
         $description = $POST["description"];
-        $FK_userId = 4;//$POST["FK_userId"];
+        var_dump($_SESSION['login_user']);
+        $FK_userId = 4;
         $photo_name = $POST["photo_name"];
 
         $sqlQuery = "INSERT INTO adverts (title, price, description, FK_userId , photo_name, color) VALUES ('$title', $price,
-                    '$description', '$FK_userId', '$photo_name', '$color')";
+                    '$description', $FK_userId, '$photo_name', '$color')";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         if($statement->execute()){ //; // execute the PDO statement
             echo '<h4>Advert Post Successful</h4>';
-
-
         } else {
             echo 'false';
         }
-   //     $statement->execute();
-//        $dataSet = [];
-//        while ($row = $statement) {
-//            $dataSet[] = new AdvertData($row);
-//        }
-//   //, description, FK_userId , photo_name, color)
-      //  , $description, $FK_userId , $photo_name, $color
-//        return $dataSet;
 }
 
 

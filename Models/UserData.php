@@ -16,7 +16,7 @@ class UserData {
         return $this->_userId;
     }
 
-    public function getUsername() {
+    public function getUserName() {
         return $this->_username;
     }
 

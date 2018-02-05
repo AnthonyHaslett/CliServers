@@ -1,6 +1,6 @@
 <?php
 require_once('Models/AdvertDataSet.php');
-
+session_start();
 $view = new stdClass();
 $view->pageTitle = 'Browse';
 

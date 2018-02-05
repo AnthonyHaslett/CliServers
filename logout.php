@@ -1,6 +1,12 @@
 <?php
     session_start();
-    unset($_SESSION);
-    session_destroy();
-header("Location: index.php");
+  //  session_destroy();
+    echo $_SESSION['login_user'];
+    if(session_destroy()){
+        echo "No session!";
+    } else {
+        echo "here";
+        echo session_id($_SESSION['login_user']);
+    }
 
+header("Location: index.php");
