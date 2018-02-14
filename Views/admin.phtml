@@ -1,11 +1,17 @@
 <?php require('template/header.phtml') ?>
 
-<div class="container">
-    <h1>Admin Page</h1>
+<div class="container-fluid">
+    <div id="boxModel" class="col-xs-12">
 
-    <p>Welcome to the admin page, here you can manage all aspects of your data</p>
+    <div>
+        <h1>Admin Page</h1>
 
-    <p>*Need: search function for data, AJAX?</p>
+        <p>Welcome to the admin page, here you can manage all aspects of your data</p>
+
+        <p>*Need: search function for data, AJAX?</p>
+    </div>
+
+<div>
 
     <form>
         <h1>Users</h1>
@@ -13,29 +19,27 @@
         <h2>Add user</h2>
 
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add user</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserModal" data-whatever="@mdo">Add user</button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Sign a user up</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+        <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addUserModalLabel">Sign a user up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="user add" class="col-form-label">The following button will take you to the login page where you can sign a user up</label>
+                                <input type="button" class="btn btn-info" value="Sign user up" onclick="location.href = '../../login.php'">
                             </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="user add" class="col-form-label">The following button will take you to the login page where you can sign a user up</label>
-                                        <button type="button" class="btn btn-primary">Sign user up</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -44,43 +48,129 @@
         <h2>Edit user details</h2>
         <p>Search for user, then edit details. For example a password reset, or a change of address</p>
 
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editUserModal" data-whatever="@mdo">Edit user details</button>
+
+        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUserModalLabel">Edit a users details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="user add" class="col-form-label">Search for user</label>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+<!--                                <div class="input-group-append">-->
+                                    <button class="btn btn-primary" type="button">Submit</button>
+<!--                                </div>-->
+                            </div>
+
+                            <div class="form-group">
+
+<!--                                PHP FOR EACH LOOP HERE-->
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Edit this user?</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                        <td><input type="checkbox" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                        <td><input type="checkbox" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                        <td><input type="checkbox" value=""></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-secondary">Edit user</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <ul class="pagination pagination-sm">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <h2>Retrieve user feedback</h2>
 
         <h2>Remove user</h2>
 
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeUserModal" data-whatever="@mdo">Remove user</button>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Remove user</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sign a user up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="user add" class="col-form-label">The following button will take you to the login page where you can sign a user up</label>
-                        <button type="button" class="btn btn-primary">Sign user up</button>
+        <div class="modal fade" id="removeUserModal" tabindex="-1" role="dialog" aria-labelledby="removeUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="removeUserModalLabel">Remove a user</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="user add" class="col-form-label">Remove a user</label>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="button">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </div>
-</div>
-</div>
+<!--</div>-->
+<!--</div>-->
 
 
 
-    </form>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+</form>
 
+<div>
 
     <form>
         <h1>Advert</h1>
@@ -96,14 +186,17 @@
 
     </form>
 
+</div>
+
+<div>
     <form>
         <h1>Wish list</h1>
 
         <h2>Add to wish list</h2>
         <h2>Remove from wish list</h2>
     </form>
+</div>
 
-
-
+</div>
 </div>
 <?php require('template/footer.phtml') ?>

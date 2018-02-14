@@ -1,54 +1,78 @@
 <?php require('template/header.phtml') ?>
-    <body>
 
-        <h3>Post an ad!</h3>
+    <div class="container">
+        <div id="boxModel" class="col-xs-12">
+
+        <div class="page-header">
+            <h3>Post an ad!</h3>
+        </div>
+
         <p><strong>Please provide, a title, description, and an image of your product</strong></p>
         <form name="postAd" method="post" action="../postAdvert.php">
 
-            <div class="container">
-                <div>
-<!--                    <label>Make of Car<br>-->
-<!--                        <input type="text" name="title" required></label><br/>-->
+        <div>
+            <!--                    <label>Make of Car<br>-->
+            <!--                        <input type="text" name="title" required></label><br/>-->
 
-                    <label for="carDropMake">Make of Car</label>
-                    <select name="title" id="carDropMake">
-                        <option value="Mercedes"> Mercedes</option>
-                        <option value="BMW"> BMW</option>
-                        <option value="Tesla"> Tesla</option>
-                        <option value="Ford"> Ford</option>
-                        <option value="Audi"> Audi</option>
-                        <option disabled>Super cars</option>
-                        <option value="Lambo"> Lambo</option>
-                    </select>
-                    <br/>
+            <label for="carDropMake">Make of Car</label>
+            <select name="title" id="carDropMake">
 
-                    <label>Price(£) <br/>
-                        <input type="text" name="price" required></label><br/>
+                <option disabled>Regular Cars</option>
+                <option value="Mercedes"> Mercedes</option>
+                <option value="BMW"> BMW</option>
+                <option value="Ford"> Ford</option>
+                <option value="Audi"> Audi</option>
 
-                    <label>Color<br/>
-                        <input type="text" name="color" required></label><br/>
+                <option disabled>Electric Cars</option>
+                <option value="Tesla"> Tesla</option>
 
-                    <label>Description<br/>
-<!--                    <textarea rows="4" cols="50" required></textarea><br/>-->
-                            <input type="text" name="description" required></label><br/>
+                <option disabled>Super cars</option>
+                <option value="Lambo"> Lambo</option>
+                <option value="Ferrari"> Ferrari</option>
+            </select>
+            <br/>
 
+            <label>Price(£) <br/>
+                <input type="text" name="price" placeholder="Your asking price." required></label><br/>
 
-<!--                        Need to do a check again the file size, and actual size.-->
+            <!--                    <label>Color<br/>-->
+            <!--                        <input type="text" name="color" required></label><br/>-->
 
-<!--                        <form action="upload.php" method="post" enctype="multipart/form-data">-->
-                            Select image to upload:
-<!--                            <input type="text" name="photo_name" id="photo_name">-->
-                            <input type="file" value="Upload Image" name="photo_name">
-<!--                        </form>-->
-                </div>
+            <div class="form-group">
 
-                <div>
-                    <input type="submit" name="submit" value="submit" class="btn btn-primary">
-                </div>
+                <label for="color">Color</label>
+                <select name="color" id="carDropColor">
+                    <option value="black"> Black</option>
+                    <option value="white"> White</option>
+                    <option value="grey"> Grey</option>
+                    <option value="red"> Red</option>
+                    <option value="orange"> Orange</option>
+                    <option value="blue"> Blue</option>
+                </select>
 
             </div>
 
-        </form>
 
-    </body>
+            <label>Description<br/>
+                <!--                    <textarea rows="4" cols="50" required></textarea><br/>-->
+                <input type="text" name="description" placeholder="Tell us about your car..." required></label><br/>
+
+
+            <!--                        Need to do a check again the file size, and actual size.-->
+
+            <!--                        <form action="upload.php" method="post" enctype="multipart/form-data">-->
+            Select image to upload:
+            <!--                            <input type="text" name="photo_name" id="photo_name">-->
+            <input type="file" value="Upload Image" name="photo_name">
+            <!--                        </form>-->
+        </div>
+
+        <div>
+            <input type="submit" name="submit" value="submit" class="btn btn-primary">
+        </div>
+        </form>
+    </div>
+    </div>
+
+
 <?php require('template/footer.phtml') ?>

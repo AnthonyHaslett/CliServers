@@ -1,7 +1,108 @@
 <?php require('template/header.phtml') ?>
 <div class="container">
-<h3>Wish List</h3>
-    <p>Add your wish list here!</p>
+    <div id="boxModel" class="col-sm-6 col-md-6">
 
-<div/>
+            <div class="page-header">
+                <h3>Wish List</h3>
+            </div>
+
+            <p>See your wish list here!</p>
+
+<!--            <form action="--><?php //echo $_SERVER['PHP_SELF']; ?><!--" method="post">-->
+<!---->
+<!---->
+<!--                <!--        For each loop to loop through advert data so that the user can view advert information.-->-->
+<!---->
+<!---->
+<?php //foreach ($view->wishlistDataSet as $wishlistData) {
+//
+//
+////            echo $advertDataSet->filterFetch($_POST);
+//
+//
+//                    echo
+//
+//                        '<div class="col-md-4 hidden-sm-down" id="map_container">'.
+//                        '<div class = "card">' .
+//
+//                        '<div class = "card-body" >' .
+//
+//
+//                        '<h1 class="card-title"> Name of Car: ' . $advertData->getTitle() . '</h1>' .
+//
+//                        '<h2 class="card-title"> Price:</h2>' .
+//
+//                        '<p class="card-text">' . $advertData->getPrice() . '</p>' .
+//
+//                        '<img src="images/' . $advertData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />' . '<br/>' .
+//
+//                        '<h2 class="card-title">Description: </h2>' .
+//
+//                        '<p1 class="card-text"> ' . $advertData->getDescription() . '</p1>' . '<br/>' .
+//
+//                        '<h2 class="card-title">Color: </h2>' .
+//
+//                        '<p1 class="card-text">' . $advertData->getColor() . '<p1/>' . '<br/>' .
+//
+//                        '<p1 class="card-text"> Advert Id: ' . $advertData->getAdvertID() . '</p1>' . '<br/>' .
+//
+////                '<p1> Posted by: ' .$userData->getUsername().'<p1/>'.'<br/>'.
+//
+////                        '<button type="button" class="btn btn-primary">Contact owner</button>' .
+//
+//                        //Contact Owner Modal
+//
+//                        '                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#browseModal" data-whatever="@mdo">Contact Owner</button>
+//' .
+//
+//                        '<button type="button" class="btn btn-secondary">Add to wishlist</button>'
+//
+//                        . '<div/>'
+////                        . '<div/>'
+//                        . '<p id="break">----------------------------------------------</p>';
+//                }
+//                ?>
+
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
 <?php require('template/footer.phtml') ?>

@@ -1,208 +1,258 @@
 <?php require('template/header.phtml') ?>
 
-<div class="container">
+<div class="container-fluid">
     <div id="boxModel" class="col-xs-12">
 
-        <h3>Browse</h3>
+        <div class="page-header">
+            <h2>Browse</h2>
+        </div>
 
+        <div class="row">
         <div id="filter">
             <aside class="float-left">
 
-                <form name="filter" method="POST" action="browse.php">
-                    <div class="form-group">
-                        <label for="carDropMake">Car make</label>
-                        <select id="carDrop">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
+                <form name="filter" method="POST" action="../browse.php">
+
+                    <div>
+                        <p class="h3">Filter your search</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="carDropPrice">Price</label>
-                        <select id="carDropPrice">
-                            <option value="<1000"><1000</option>
-                            <option value="<5000"><5000</option>
-                            <option value="<10000"><10,000</option>
-                            <option value="<20000"><20,000</option>
-                            <option value="<50000"><50,000</option>
-                            <option value="<100000"><100,000</option>
-                        </select>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label for="carDropMake">Car make</label>-->
+<!--                        <select name="carDropMake" id="carDrop">-->
+<!--                            <option value="">NO SELECTION</option>-->
+<!--                            <option disabled>Regular Cars</option>-->
+<!--                            <option value="Mercedes"> Mercedes</option>-->
+<!--                            <option value="BMW"> BMW</option>-->
+<!--                            <option value="Ford"> Ford</option>-->
+<!--                            <option value="Audi"> Audi</option>-->
+<!---->
+<!--                            <option disabled>Electric Cars</option>-->
+<!--                            <option value="Tesla"> Tesla</option>-->
+<!---->
+<!--                            <option disabled>Super cars</option>-->
+<!--                            <option value="Lambo"> Lambo</option>-->
+<!--                            <option value="Ferrari"> Ferrari</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label for="carDropPrice">Price</label>-->
+<!--                        <select name="carDropPrice" id="carDropPrice">-->
+<!--                            <option value="">NO SELECTION</option>-->
+<!--                            <option value="1000"><1000</option>-->
+<!--                            <option value="5000"><5000</option>-->
+<!--                            <option value="10000"><10,000</option>-->
+<!--                            <option value="20000"><20,000</option>-->
+<!--                            <option value="50000"><50,000</option>-->
+<!--                            <option value="100000"><100,000</option>-->
+<!--                            <option value="250000"><250,000</option>-->
+<!--                            <option value="500000"><500,000</option>-->
+<!--                            <option value="750000"><750,000</option>-->
+<!--                            <option value="1000000"><1,000,000</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!---->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label for="carDropColor">Color</label>-->
+<!--                        <select name="carDropColor" id="carDropColor">-->
+<!--                            <option value="">NO SELECTION</option>-->
+<!--                            <option value="black"> Black</option>-->
+<!--                            <option value="white"> White</option>-->
+<!--                            <option value="grey"> Grey</option>-->
+<!--                            <option value="red"> Red</option>-->
+<!--                            <option value="orange"> Orange</option>-->
+<!--                            <option value="blue"> Blue</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <button type="submit" name="filterSubmit" value="filterSubmit" class="btn btn-success">Submit</button>-->
+
+                        <div class="btn-group">
+
+                            <button type="submit" name="searchAll" class="btn btn-primary">Search all adverts</button>
+                            <button type="submit" name="low2high" value="low2high" class="btn btn-primary">Filter low to high (price)</button>
+                            <button type="submit" name="high2low" value="high2low" class="btn btn-primary">Filter high to low (price)</button>
+                            <button type="submit" name="titleASC" value="titleASC" class="btn btn-primary">Filter title (ASC)</button>
+                            <button type="submit" name="titleDESC" value="titleDESC" class="btn btn-primary">Filter title (DESC)</button>
+
+                            <input type="search" placeholder="Search...">
+                            <button type="submit" name="freeSearchSubmit" value="freeSearchSubmit" class="btn btn-success">Submit Search</button>
 
 
-                    <div class="form-group">
-                        <label for="carDropColour">Color</label>
-                        <select name="select" id="carDropColour">
-                            <option value="black"> Black</option>
-                            <option value="white"> White</option>
-                            <option value="grey"> Grey</option>
-                            <option value="red"> Red</option>
-                            <option value="blue"> Blue</option>
-                        </select>
-                    </div>
 
-                    <button type="submit" class="btn btn-success">Submit</button>
+                            <br>
+<!--                            <p>TEST BUTTON</p>-->
+<!--                            <button type="submit" name="freeSearchSubmit" value="freeSearchSubmit" class="btn btn-success">TEST</button>-->
+
+                        </div>
                 </form>
             </aside>
+
+
+        </div>
         </div>
 
-        <button class = ""> Search all adverts </button>
+        <div class="pull-right">
+
+            <!--    This should be apart of a browse all method in the advert data set.
+                    User can select which data they would like to see.-->
+
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
 
-
-<div class="pull-right">
-
-<!--    This should be apart of a browse all method in the advert data set.
-        User can select which data they would like to see.-->
-
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-<!--        For each loop to loop through advert data so that the user can view advert information.-->
-
-        <?php foreach ($view->advertDataSet as $advertData) {
-            echo
-
-                '<div class = "card">'.
-
-                '<div class = "card-body">'.
+                <!--        For each loop to loop through advert data so that the user can view advert information.-->
 
 
+                <?php foreach ($view->advertDataSet as $advertData) {
 
-                '<h1 class="card-title"> Name of Car: ' .$advertData->getTitle().'</h1>'.
 
-                '<h2 class="card-title"> Price:</h2>'.
+//            echo $advertDataSet->filterFetch($_POST);
 
-                '<p class="card-text">' .$advertData->getPrice().'</p>'.
 
-                '<img src="images/' . $advertData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />'. '<br/>'.
+                    echo
+//                        '<div class="col-md-8 col-sm-12 ">'.
 
-                '<h2 class="card-title">Description: </h2>'.
+//                        '<div class = "row">' .
 
-                '<p1 class="card-text"> ' .$advertData->getDescription().'</p1>'. '<br/>'.
+//                        '<div class="card-columns">'.
 
-                '<h2 class="card-title">Color: </h2>'.
+                        '<div class = "card" id="PHPcard">' .
 
-                '<p1 class="card-text">' .$advertData->getColor().'<p1/>'.'<br/>'.
 
-                '<p1 class="card-text"> Advert Id: ' .$advertData->getAdvertID().'</p1>'. '<br/>'.
+                        '<div class = "card-body" id="PHPcardbody">' .
 
-//                '<p1> Posted by: ' .$userData->getUsername().'<p1/>'.'<br/>'.
 
-                '<button type="button" class="btn btn-primary">Contact owner</button>'.
+                        '<h1 class="card-title"> Name of Car: ' . $advertData->getTitle() . '</h1>' .
 
-                //Contact Owner Modal
+                        '<h2 class="card-title"> Price:</h2>' .
 
-                '                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contact Owner *MODAL*</button>
-'.
-                '        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-'.
-                '            <div class="modal-dialog" role="document">
-'.
-                '                <div class="modal-content">
-'.
-                '                    <div class="modal-header">
-'.
-                '                        <h5 class="modal-title" id="exampleModalLabel">New message to owner</h5>
-'.
-                '                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-'.
-                '                            <span aria-hidden="true">&times;</span>
-'.
-                '                        </button>
-'.
-                '                    </div>
-'.
-                '                    <div class="modal-body">
-'.
-                '                        <form>
-'.
-                '                            <div class="form-group">
-'.
-                '                                <label for="recipient-name" class="col-form-label">Recipient:</label>
-'.
-                '                                <input type="text" class="form-control" id="recipient-name">
-'.
-                '                            </div>
-'.
-                '                            <div class="form-group">
-'.
-                '                                <label for="message-text" class="col-form-label">Message:</label>
-'.
-                '                                <textarea class="form-control" id="message-text"></textarea>
-'.
-                '                            </div>
-'.
-                '                        </form>
-'.
-                '                    </div>
-'.
-                '                    <div class="modal-footer">
-'.
-                '                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-'.
-                '                        <button type="button" class="btn btn-primary">Send message</button>
-'.
-                '                    </div>
-'.
-                '                </div>
-'.
-                '            </div>
-'.
-                '        </div>
-'.
-                '    </div>
-'.
-                '</div>
-'.
+                        '<p class="card-text">' . $advertData->getPrice() . '</p>' .
 
-            '<button type="button" class="btn btn-secondary">Add to wishlist</button>'
+                        '<img src="images/' . $advertData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />' . '<br/>' .
 
-                .'<div/>'
-                .'<div/>'
-                .'<br/>';
-        } ?>
-    </form>
+                        '<h2 class="card-title">Description: </h2>' .
+
+                        '<p1 class="card-text"> ' . $advertData->getDescription() . '</p1>' . '<br/>' .
+
+                        '<h2 class="card-title">Color: </h2>' .
+
+                        '<p1 class="card-text">' . $advertData->getColor() . '<p1/>' . '<br/>' .
+
+                        '<p1 class="card-text"> Advert Id: ' . $advertData->getAdvertID() . '</p1>' . '<br/>' .
+
+//                '<p1> Posted by: ' .$userData->().'<p1/>'.'<br/>'.
+
+//                        '<button type="button" class="btn btn-primary">Contact owner</button>' .
+
+                        //Contact Owner Modal
+
+                        '                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#browseModal" data-whatever="@mdo">Contact Owner</button>
+' .
+
+                        '<button type="button" class="btn btn-secondary">Add to wishlist</button>'
+
+//                        . '</div>'
+//                        . '</div>'
+//                        . '</div>'
+                        . '</div>'
+                        . '</div>'
+                        . '<p id="break">----------------------------------------------</p>';
+                }
+                ?>
+
+<?php //foreach ($view->userDataSet as $userData) {
+//
+//'        <div class="modal fade" id="browseModal" tabindex="-1" role="dialog" aria-labelledby="browseModalLabel" aria-hidden="true">
+//' .
+//'            <div class="modal-dialog" role="document">
+//' .
+//'                <div class="modal-content">
+//' .
+//'                    <div class="modal-header">
+//' .
+//'                        <h5 class="modal-title" id="browseModalLabel">Details to contact owner</h5>
+//' .
+//'                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//' .
+//'                            <span aria-hidden="true">&times;</span>
+//' .
+//'                        </button>
+//' .
+//'                    </div>
+//' .
+//'                    <div class="modal-body">
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//' .
+//'                        <form>
+//' .
+//'                            <div class="form-group">
+//' .
+//'                                <label for="recipient-name" class="col-form-label">Username:</label>
+//' .
+////                        '                                <input type="text" class="form-control" name ="subject" id="subject">
+////' .
+//'<p>GET USER NAME</p>'.
+//'                            </div>
+//' .
+//'                            <div class="form-group">
+//' .
+//'                                <label for="message-text" class="col-form-label">Email</label>
+//' .
+////                        '                                <textarea class="form-control" name ="enquiry" id="message-text"></textarea>
+////' .
+//'<p>GET Email</p>'.
+//
+//'                                <label for="message-text" class="col-form-label">Address</label>
+//' .
+//'<p>GET Address</p>'.
+//'                            </div>
+//' .
+//'                        </form>
+//
+//' .
+//'                    </div>
+//' .
+//'                    <div class="modal-footer">
+//' .
+//'                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+//' .
+//'                        <button type="button" class="btn btn-primary" name="contactBtn"  > ' .' end message'. '</button>
+//' .
+//'                    </div>
+//' .
+//'                </div>
+//' .
+//'            </div>
+//' .
+//'        </div>
+//' .
+//'    </div>
+//' .
+//'</div>'
+//. '<br/>';
+//
+//
+//} ?>
+
+            </form>
+            <div>
+                <ul class="pagination pagination-sm">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+                </div>
 </div>
 
-
-<!--        Implement this in to the PHP loop, it's modal form-->
-<!---->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contact Owner *MODAL*</button>-->
-<!---->
-<!--        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--            <div class="modal-dialog" role="document">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">New message to owner</h5>-->
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                            <span aria-hidden="true">&times;</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <form>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="recipient-name" class="col-form-label">Recipient:</label>-->
-<!--                                <input type="text" class="form-control" id="recipient-name">-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="message-text" class="col-form-label">Message:</label>-->
-<!--                                <textarea class="form-control" id="message-text"></textarea>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                        <button type="button" class="btn btn-primary">Send message</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--    </div>-->
-<!--</div>-->
-
-
-
-<?php require('template/footer.phtml') ?>
+                <?php require('template/footer.phtml') ?>

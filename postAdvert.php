@@ -22,7 +22,9 @@ $advertDataSet = new AdvertDataSet();
 //    $photo_name = $_POST['photo_name'];
 ////}
 ///
+if(!(isset($_SESSION['login_user']))){
 
+}
 
 if(isset($_POST['submit'])){
   //  var_dump($_POST);

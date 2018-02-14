@@ -1,17 +1,20 @@
 <?php
 
-require ('Database.php');
-require ('AdvertData.php');
-
-class AdvertDataSet {
+require('Database.php');
+require('AdvertData.php');
+require ('UserData.php');
+class AdvertDataSet
+{
     protected $_dbHandle, $_dbInstance;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->_dbInstance = Database::getInstance();
         $this->_dbHandle = $this->_dbInstance->getdbConnection();
     }
 
-    public function fetchAllAdverts() {
+    public function fetchAllAdverts()
+    {
         $sqlQuery = 'SELECT * FROM adverts';
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
@@ -24,48 +27,201 @@ class AdvertDataSet {
         return $dataSet;
     }
 
-    public function fetchAllAudis($POST) {
-        $sqlQuery = "SELECT * FROM adverts WHERE title = 'Audi', price = 'audi' ";
-    echo print_r($sqlQuery);
+
+    public function browseAdverts($GET)
+    {
+//        var_dump($GET);
+
+            if ($_GET=='filterSubmit') {
+//        if ( $GET = 'filterSubmit') {
+            $carMake = $_GET['carDropMake'];
+            $carPrice = $_GET['carDropPrice'];
+            $carColor = $_GET['carDropColor'];
+
+//            $carMake = $_REQUEST['filterSubmit'] == 'carDropMake';
+//            $carPrice = $_REQUEST['filterSubmit'] == 'carDropPrice';
+//            $carColor = $_REQUEST['filterSubmit'] == 'carDropColor';
+
+            $sqlQuery = "SELECT * FROM adverts WHERE title = '$carMake' AND price <= '$carPrice' AND color = '$carColor'  ";
+//            $sqlQuery = "SELECT * FROM adverts WHERE title = 'mercedes' AND price <= '70000' AND color = 'grey'";
+//
+
+
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+
+                if ($statement->execute()) { //; // execute the PDO statement
+                    $dataSet = [];
+                    while ($row = $statement->fetch()) {
+                        $dataSet[] = new AdvertData($row);
+                        var_dump($dataSet);
+                    }
+                    var_dump($dataSet);
+                    return $dataSet;
+                } else {
+                    echo 'false';
+                }
+            }
+
+//            $statement->execute(); // execute the PDO statement
+//            $dataSet = [];
+//            while ($row = $statement->fetch()) {
+//                $dataSet[] = new AdvertData($row);
+//                var_dump($dataSet);
+//            }
+//            var_dump($dataSet);
+//            return $dataSet;
+
+//        }
+
+        elseif($_GET=='low2high'){
+            $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.price ASC; ';
+//                        $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
+
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
+
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
+
+            }
+            return $dataSet;
+        }
+
+            elseif($_GET=='high2low'){
+
+            $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.price DESC; ';
+//                $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
+
+                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+                $statement->execute(); // execute the PDO statement
+
+                $dataSet = [];
+                while ($row = $statement->fetch()) {
+                    $dataSet[] = new AdvertData($row);
+
+                }
+                return $dataSet;
+            }
+
+            elseif($_GET=='titleASC'){
+
+                $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title ASC';
+
+                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+                $statement->execute(); // execute the PDO statement
+
+                $dataSet = [];
+                while ($row = $statement->fetch()) {
+                    $dataSet[] = new AdvertData($row);
+
+                }
+                return $dataSet;
+            }
+
+            elseif($_GET=='titleDESC'){
+
+                $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title DESC';
+
+                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+                $statement->execute(); // execute the PDO statement
+
+                $dataSet = [];
+                while ($row = $statement->fetch()) {
+                    $dataSet[] = new AdvertData($row);
+
+                }
+                return $dataSet;
+            }
+
+//            elseif($_GET=='freeSearchSubmit'){
+//
+////                $search = $_GET['freeSearchSubmit'];
+//                $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
+//
+////                $sqlQuery = "SELECT * FROM adverts  WHERE ('title' LIKE '%'.$search.'%')" ;
+//
+//
+//
+//                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+//                $statement->execute(); // execute the PDO statement
+//
+//                $dataSet = [];
+//                while ($row = $statement->fetch()) {
+//                    $dataSet[] = new AdvertData($row);
+//
+//                }
+//                return $dataSet;
+//            }
+
+
+        //        elseif(isset($POST[''])){
+//        }
+        else {
+//            $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
+            $sqlQuery = 'SELECT * FROM adverts';
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
+
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
+
+            }
+            return $dataSet;
+        }
+
+
+    }
+
+
+    public function freeSearch($POST)
+    {
+//        $search = $POST["freeSearchSubmit"];
+        $search = $POST["freeSearchSubmit"];
+
+//        $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
+
+                $sqlQuery = "SELECT * FROM adverts  WHERE ('title' LIKE .'%'.$search.'%') OR ('price' LIKE .'%'.$search.'%') OR ('description' LIKE .'%'.$search.'%') OR ('color' LIKE .'%'.$search.'%') " ;
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
 
-//        $dataSet = [];
-//        while ($row = $statement->fetch()) {
-//            $dataSet[] = new AdvertData($row);
-//        }
-        return null;
+        $dataSet = [];
+        while ($row = $statement->fetch()) {
+            $dataSet[] = new AdvertData($row);
+
+        }
+        return $dataSet;
     }
 
 
-
-    public function insertAdvert($POST) {
-
+    public function insertAdvert($POST)
+    {
         $title = $POST["title"];
 //        echo $title;
         $price = $POST["price"];
         $color = $POST["color"];
         $description = $POST["description"];
         var_dump($_SESSION['login_user']);
-        $FK_userId = 4;
+//        $FK_userId = 4;
+
+        $FK_userId = $_SESSION['login_user'];
         $photo_name = $POST["photo_name"];
 
         $sqlQuery = "INSERT INTO adverts (title, price, description, FK_userId , photo_name, color) VALUES ('$title', $price,
                     '$description', $FK_userId, '$photo_name', '$color')";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-        if($statement->execute()){ //; // execute the PDO statement
+        if ($statement->execute()) { //; // execute the PDO statement
             echo '<h4>Advert Post Successful</h4>';
         } else {
             echo 'false';
         }
-}
+    }
 
 
-public function textSearch($POST){
 
-}
 
 }
 

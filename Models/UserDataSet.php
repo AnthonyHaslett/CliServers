@@ -24,6 +24,7 @@ class UserDataSet {
         return $dataSet;
     }
 
+
     public function fetchAllUserNames() {
         $sqlQuery = 'SELECT username FROM users';
 
@@ -41,6 +42,9 @@ class UserDataSet {
     public function selectUser($POST) {
 
         $username = $POST["username"];
+        $antiSpam = $POST["anti-spam"];
+
+
         $sqlQuery = "SELECT * FROM users WHERE username = '$username'";
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
@@ -57,7 +61,7 @@ class UserDataSet {
                 $_SESSION['login_user']=$dataSet->getStudentID();
                 return true;
             } else {
-                echo 'Wrong pass';
+                echo 'Wrong password';
                 return false;
             }
         }

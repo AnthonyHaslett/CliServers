@@ -1,9 +1,12 @@
 <?php require('template/header.phtml') ?>
 
-<h3>Contact us</h3>
 
-<body>
 <div class="container">
+
+    <div class="page-header">
+        <h3>Contact Owner</h3>
+    </div>
+
     <p><strong>Please fill out your details.</strong></p>
     <form name="contact" method="post" action="../contactUs.php">
 
@@ -11,7 +14,13 @@
 
             <div>
                 <label>Name: </label>
-                <input type="text" name="name" required></label><br>
+                <p>USER NAME HERE</p>
+
+                <label>Email: </label>
+                <p>EMAIL HERE</p>
+
+                <label>Address: </label>
+                <p>ADDRESS HERE</p>
 
 <!--                <label>Address: </label>-->
 <!--                <input type="text" name="address" required></label><br>-->
@@ -26,7 +35,7 @@
 
 <!--            <div>-->
 <!--                <label>We'd love to hear from you!</label><br>-->
-<!--                <textarea style="width:80%" required></textarea>-->
+<!--                <textarea style="width:80% name="enquiry" required></textarea>-->
 <!--            </div>-->
 
             <div >
@@ -38,6 +47,5 @@
     </form>
 
 </div>
-</body>
 
 <?php require('template/footer.phtml') ?>

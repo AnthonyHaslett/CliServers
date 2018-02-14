@@ -99,6 +99,36 @@ img {
 }
 
 
+#myNavbar{
+    background-color: #403f4c;
+    color: #403f4c;
+}
+
+#nav-bar{
+    background-color: #403f4c;
+}
+
+.navbar-header{
+    background-color: #403f4c;
+}
+
+
+/*#PHPcard{*/
+    /*background-color: #3185fc;*/
+    /*!*margin-left: 30px;*!*/
+    /*padding: 0.25px;*/
+/*}*/
+
+/*PHPcardbody{*/
+    /*background-color: #403f4c;*/
+
+/*}*/
+
+#break{
+    background-color: #403f4c;
+}
+
+
 /*#filter{*/
     /*background-color: #403f4c;*/
     /*padding: 10px;*/

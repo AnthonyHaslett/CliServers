@@ -6,13 +6,13 @@
  //   echo 'try again';
 //}
 ?>
-<div class="container">
+<div class="container-fluid">
+    <div id="boxModel" class="col-xs-12">
+    <h1><strong>Please login or sign up</strong></h1>
 
-    <h1><strong>Log in or sign up:</strong></h1>
 
 
-
-        <form name="login" method="POST" action="login.php">
+        <form name="login" method="POST" action="../login.php">
 
             <div id="loginBox">
                 <h3>Login</h3>
@@ -22,13 +22,23 @@
                 <label>password:
                     <input type="password" name="password" required></label><br>
 
-                <input type="submit" name="login" value="Login" class="btn btn-primary">
+
+                    <label>Prove you're human...
+                        <img src="/images/antispam.gif">
+                        <p>Please enter the text in the image</p>
+                        <input type="text" name="anti-spam" required></label><br>
+
+
+
+
+                <input type="submit" name="login" value="login" class="btn btn-primary">
             </div>
+
 
         </form>
 
 
-        <form name="signUp" method="POST" action="login.php">
+        <form name="signUp" method="POST" action="../login.php">
 
             <div id="signUpBox">
 
@@ -41,17 +51,23 @@
                     <input type="password" name="password" required></label><br>
 
                 <label>email:
-                    <input type="text" name="email" required></label><br>
+                    <input type="email" name="email" required></label><br>
 
 
                 <label>Address:
                     <input type="text" name="address" required></label><br>
+
+                <label>Prove you're human...
+                    <img src="images/antispam.gif">
+                    <p>Please enter the text in the image</p>
+                    <input type="text" name="anti-spam" required></label><br>
             </div>
+
 
             <input type="submit" name="sign-up" value="sign-up" class="btn btn-primary">
 
         </form>
-
+    </div>
 </div>
 
 <?php require('template/footer.phtml') ?>

@@ -8,9 +8,19 @@ $view->pageTitle = 'Contact us!';
 
 $contactUsDataSet = new ContactUsDataSet();
 
-if(isset($_POST['conSubmit'])) {
+if(isset($_POST['contactBtn'])) {
 
     $contactUsDataSet->insertContactDetails($_POST);
 
 }
+
+
+
+
+//if(isset($_POST['contactBtn'])){
+//    $contactUsDataSet = new ContactUsDataSet();
+//    $view->contactUsDataSet = $contactUsDataSet->();
+//}
+
+
 require ('Views/contactUs.phtml');

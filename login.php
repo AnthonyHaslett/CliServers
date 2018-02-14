@@ -9,11 +9,17 @@ require ('Models/UserDataSet.php');
 
 $userDataSet = new UserDataSet();
 
-if (isset ($_POST['sign-up']) ){
-    $userDataSet->insertUser($_POST);
+
+if ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['sign-up']) ){
+
+//    if (isset ($_POST['sign-up']) ){
+        $userDataSet->insertUser($_POST);
+//    }
 }
 
-if (isset ($_POST['login']) ){
+elseif ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['login']) ){
+
+//    if (isset ($_POST['login']) ){
 
     $data = $userDataSet->selectUser($_POST);
     if($data==true){
@@ -21,6 +27,37 @@ if (isset ($_POST['login']) ){
     } else {
         echo 'wrong';
     }
+
+//    }
+}
+else{
+    echo 'Please try again';
+}
+
+
+
+//else{
+//    echo 'Please try again';
+//}
+
+
+//if (isset ($_POST['login']) ){
+//    $data = $userDataSet->selectUser($_POST);
+//    if($data==true){
+//        header('Location: index.php');
+//    } else {
+//        echo 'wrong';
+//    }
+
+
+
+
+//
+//    if($_REQUEST['sign-up'] == 'anti-spam'){
+//        echo 'hello';
+//    }
+
+
     //if($dataSet!=null){
 //            if(password_verify(htmlentities($_POST["password"]), $dataSet->getPassword())){
 //                echo 'successfully logged in';
@@ -29,6 +66,6 @@ if (isset ($_POST['login']) ){
          //   require_once ('index.php');
          //   header('Location: index.php');
       //  }
-    }
+
 
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2053acf2-59cd-4f1a-b82d-f6ac9f63dec7" name="Helios" url="http://helios.csesalford.com">
+        <fileTransfer host="helios.csesalford.com" port="25">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="25" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

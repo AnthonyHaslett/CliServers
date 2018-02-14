@@ -68,28 +68,26 @@
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="7" name="fk_name">
+    <column id="22" parent="7" name="enquiry">
       <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="7" name="fk_address">
+    <column id="23" parent="7" name="fk_advertId">
       <Position>4</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="7" name="fk_email">
+    <column id="24" parent="7" name="subject">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="7" name="enquiry">
-      <Position>6</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="26" parent="7" name="_idx">
+    <index id="25" parent="7" name="_idx">
       <ColNames>fk_userId</ColNames>
+    </index>
+    <index id="26" parent="7" name="fk_advertId_idx">
+      <ColNames>fk_advertId</ColNames>
     </index>
     <key id="27" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -102,41 +100,47 @@
       <RefTableName>users</RefTableName>
       <RefColNames>userId</RefColNames>
     </foreign-key>
-    <column id="29" parent="8" name="email">
+    <foreign-key id="29" parent="7" name="fk_advertId">
+      <ColNames>fk_advertId</ColNames>
+      <RefSchemaName>stc687_project</RefSchemaName>
+      <RefTableName>adverts</RefTableName>
+      <RefColNames>advertId</RefColNames>
+    </foreign-key>
+    <column id="30" parent="8" name="email">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="8" name="address">
+    <column id="31" parent="8" name="address">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="31" parent="8" name="userId">
+    <column id="32" parent="8" name="userId">
       <Position>3</Position>
       <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="32" parent="8" name="username">
+    <column id="33" parent="8" name="username">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="33" parent="8" name="password">
+    <column id="34" parent="8" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="34" parent="8" name="PRIMARY">
+    <key id="35" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="9" name="wishlistId">
+    <column id="36" parent="9" name="wishlistId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="36" parent="9" name="PRIMARY">
+    <key id="37" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>wishlistId</ColNames>
       <Primary>1</Primary>
