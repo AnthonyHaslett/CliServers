@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * A default controller
+ */
+
 session_start();
 $view = new stdClass();
 $view->pageTitle = 'Page1';

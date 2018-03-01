@@ -2,6 +2,14 @@
 
 class AdvertData {
 
+    /*
+     * An advert data class to allow the system to retrieve details from
+     * the advert data table.
+     */
+
+    /*
+     Field variables.
+     */
     protected $_advertId, $_title, $_price, $_description, $_photoName, $_color ,$_FK_userID;
 
     public function __construct($dbRow) {
@@ -14,6 +22,9 @@ class AdvertData {
         $this->_FK_userID = $dbRow['FK_userId'];
     }
 
+    /*
+     * Set methods
+     * */
     /**
      * @param mixed $advertId
      */
@@ -70,7 +81,9 @@ class AdvertData {
         $this->_FK_userID = $FK_userID;
     }
 
-
+    /*
+     * Get methods
+     * */
     public function getAdvertID() {
         return $this->_advertId;
     }

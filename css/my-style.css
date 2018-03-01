@@ -51,6 +51,7 @@ White: #f5f5f5
     padding: 25px;
     /*margin: 25px;*/
     margin: auto;
+    background-color: transparent;
 }
 
 
@@ -113,11 +114,11 @@ img {
 }
 
 
-/*#PHPcard{*/
+#PHPcard{
     /*background-color: #3185fc;*/
-    /*!*margin-left: 30px;*!*/
-    /*padding: 0.25px;*/
-/*}*/
+    margin-left: 5px;
+    padding: 1px;
+}
 
 /*PHPcardbody{*/
     /*background-color: #403f4c;*/
@@ -126,6 +127,9 @@ img {
 
 #break{
     background-color: #403f4c;
+}
+#textCol{
+    color: white;
 }
 
 

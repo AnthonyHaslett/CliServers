@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * A controller to sort input from HTML then pass input to controller for execution
+ */
+
+
 session_start();
 $view = new stdClass();
 $view->pageTitle = 'Post an ad!';

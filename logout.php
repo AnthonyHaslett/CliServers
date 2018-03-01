@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * A controller to logout
+ */
+
     session_start();
   //  session_destroy();
     echo $_SESSION['login_user'];

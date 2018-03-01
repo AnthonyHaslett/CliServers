@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2053acf2-59cd-4f1a-b82d-f6ac9f63dec7" name="Helios" url="http://helios.csesalford.com">
-        <fileTransfer host="helios.csesalford.com" port="25">
+      <webServer id="2053acf2-59cd-4f1a-b82d-f6ac9f63dec7" name="Helios" url="http://stc687.edu.csesalford.com/">
+        <fileTransfer host="helios.csesalford.com" port="22" rootFolder="/home/stc687" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="25" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

@@ -10,16 +10,8 @@ require ('Models/UserDataSet.php');
 $userDataSet = new UserDataSet();
 
 
-if ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['sign-up']) ){
 
-//    if (isset ($_POST['sign-up']) ){
-        $userDataSet->insertUser($_POST);
-//    }
-}
-
-elseif ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['login']) ){
-
-//    if (isset ($_POST['login']) ){
+if ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['login']) ){
 
     $data = $userDataSet->selectUser($_POST);
     if($data==true){
@@ -27,18 +19,28 @@ elseif ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['login']) ){
     } else {
         echo 'wrong';
     }
-
-//    }
 }
-else{
-    echo 'Please try again';
-}
-
-
-
 //else{
-//    echo 'Please try again';
+//    if($_REQUEST['anti-spam'] != 'W6 8HP'){    echo 'Please try again';
+//    }
 //}
+
+
+if ($_REQUEST['anti-spam'] == 'W6 8HP' && isset ($_POST['sign-up']) ){
+
+        $userDataSet->insertUser($_POST);
+}
+//else{
+//    if($_REQUEST['anti-spam'] != 'W6 8HP'){    echo 'Please try again';
+//    }
+//}
+
+
+
+
+
+
+
 
 
 //if (isset ($_POST['login']) ){

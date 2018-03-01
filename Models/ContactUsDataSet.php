@@ -3,6 +3,9 @@
 require ('Database.php');
 require ('ContactUs.php');
 
+/* A data set to retrieve c data
+ * */
+
 class ContactUsDataSet {
     protected $_dbHandle, $_dbInstance;
         

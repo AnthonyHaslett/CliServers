@@ -1,6 +1,6 @@
 <?php require('template/header.phtml') ?>
 <div class="container">
-    <div id="boxModel" class="col-sm-6 col-md-6">
+    <div id="boxModel" class="col-sm-8 col-md-8">
 
             <div class="page-header">
                 <h3>Wish List</h3>
@@ -8,99 +8,73 @@
 
             <p>See your wish list here!</p>
 
-<!--            <form action="--><?php //echo $_SERVER['PHP_SELF']; ?><!--" method="post">-->
-<!---->
-<!---->
-<!--                <!--        For each loop to loop through advert data so that the user can view advert information.-->-->
-<!---->
-<!---->
-<?php //foreach ($view->wishlistDataSet as $wishlistData) {
-//
-//
-////            echo $advertDataSet->filterFetch($_POST);
-//
-//
-//                    echo
-//
-//                        '<div class="col-md-4 hidden-sm-down" id="map_container">'.
-//                        '<div class = "card">' .
-//
-//                        '<div class = "card-body" >' .
-//
-//
-//                        '<h1 class="card-title"> Name of Car: ' . $advertData->getTitle() . '</h1>' .
-//
-//                        '<h2 class="card-title"> Price:</h2>' .
-//
-//                        '<p class="card-text">' . $advertData->getPrice() . '</p>' .
-//
-//                        '<img src="images/' . $advertData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />' . '<br/>' .
-//
-//                        '<h2 class="card-title">Description: </h2>' .
-//
-//                        '<p1 class="card-text"> ' . $advertData->getDescription() . '</p1>' . '<br/>' .
-//
-//                        '<h2 class="card-title">Color: </h2>' .
-//
-//                        '<p1 class="card-text">' . $advertData->getColor() . '<p1/>' . '<br/>' .
-//
-//                        '<p1 class="card-text"> Advert Id: ' . $advertData->getAdvertID() . '</p1>' . '<br/>' .
-//
-////                '<p1> Posted by: ' .$userData->getUsername().'<p1/>'.'<br/>'.
-//
-////                        '<button type="button" class="btn btn-primary">Contact owner</button>' .
-//
-//                        //Contact Owner Modal
-//
-//                        '                        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#browseModal" data-whatever="@mdo">Contact Owner</button>
-//' .
-//
-//                        '<button type="button" class="btn btn-secondary">Add to wishlist</button>'
-//
-//                        . '<div/>'
-////                        . '<div/>'
-//                        . '<p id="break">----------------------------------------------</p>';
-//                }
-//                ?>
+        <input type="submit" name="wishlistDelete" value="Delete from wishlist" class="btn-danger"/>
 
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../images/default.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        </div>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+
+            <!--        For each loop to loop through advert data so that the user can view advert information.-->
+
+
+            <?php foreach ($view->wishlistDataSet as $wishlistData) {
+
+
+// adverts.title ,adverts.photo_name, adverts.description, adverts.price , users.username, users.email, users.mobileNo
+
+
+                echo
+
+
+                    '<div class = "card" id="PHPcard">' .
+
+
+                    '<div class = "card-body" id="PHPcardbody">' .
 
 
 
 
-        </div>
-    </div>
+                    '<h1 class="card-title"> User Id: ' . $wishlistData->getStudentID() . '</h1>' .
+
+                    '<h1 class="card-title"> Name of Car: ' . $wishlistData->getTitle() . '</h1>' .
+
+                    '<h2 class="card-title"> Price:</h2>' .
+
+                    '<p class="card-text">£' . $wishlistData->getPrice() . '</p>' .
+
+                    '<img src="../images/' . $wishlistData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />' . '<br/>' .
+
+                    '<h2 class="card-title">Description: </h2>' .
+
+                    '<p1 class="card-text"> ' . $wishlistData->getDescription() . '</p1>' . '<br/>' .
+
+//                    '<h2 class="card-title">Color: </h2>' .
+
+//                    '<p1 class="card-text">' . $advertData->getColor() . '<p1/>' . '<br/>' .
+
+                    '<h2 class="card-title">User name: </h2>' .
+
+                    '<p1 class="card-text"> ' . $wishlistData->getUsername() . '</p1>' . '<br/>' .
+
+                    '<h2 class="card-title">Email: </h2>' .
+
+                    '<p1 class="card-text"> ' . $wishlistData->getEmail() . '</p1>' . '<br/>' .
+
+                    '<h2 class="card-title">Mobile number: </h2>' .
+
+                    '<p1 class="card-text"> ' . $wishlistData->getMobileNo() . '</p1>' . '<br/>'
+
+//                    '<a href="wishlist.php?id=' . $wishlistData->getAdvertId() . '" type="button" class="btn btn-primary">Remove</a>'
+
+
+
+
+                    . '</div>'
+                    . '</div>'
+                    . '<p id="break">----------------------------------------------</p>';
+            }
+            ?>
+
+
 
 
 

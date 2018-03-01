@@ -3,6 +3,9 @@
 require ('Database.php');
 require ('UserData.php');
 
+/* A data set to retrieve user data
+ * */
+
 class UserDataSet {
     protected $_dbHandle, $_dbInstance;
         
@@ -42,7 +45,7 @@ class UserDataSet {
     public function selectUser($POST) {
 
         $username = $POST["username"];
-        $antiSpam = $POST["anti-spam"];
+//        $antiSpam = $POST["anti-spam"];
 
 
         $sqlQuery = "SELECT * FROM users WHERE username = '$username'";
@@ -53,6 +56,7 @@ class UserDataSet {
         while ($row = $statement->fetch()) {
             $dataSet = new UserData($row);
         }
+        var_dump($POST);
         if($dataSet==null){
             return false;
         } else {
@@ -68,21 +72,27 @@ class UserDataSet {
     }
 
 
-
+    //insert
     public function insertUser($POST) {
 
         $username = $POST["username"];
         $password = password_hash($POST["password"], PASSWORD_BCRYPT);
         $email = $POST["email"];
         $address = $POST["address"];
+        $mobileNo = $POST["mobileNo"];
 
-        $sqlQuery = "INSERT INTO users (username, password, email , address) VALUES ('$username' , '$password', 
-                    '$email','$address')";
+//        var_dump($POST);
+
+        $sqlQuery = "INSERT INTO users (username, password, email , address, mobileNo) VALUES ('$username' , '$password',
+                    '$email','$address','$mobileNo')";
+
+//        $sqlQuery = "INSERT INTO users (username, password, email , address) VALUES ('$username' , '$password',
+//                    '$email','$address')";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         if($statement->execute()){ //; // execute the PDO statement
             echo ' success';} else {
-            echo ' false';
+            echo ' Data incorrect, try again';
         }
     }
 

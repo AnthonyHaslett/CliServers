@@ -2,18 +2,10 @@
 
 session_start();// Starting Session
 $view = new stdClass();
-$view->pageTitle = 'Contact us!';
+$view->pageTitle = 'Contact Owner';
 
-//echo  $_SESSION['login_user'] . '<<<<';
 
-$contactUsDataSet = new ContactUsDataSet();
-
-if(isset($_POST['contactBtn'])) {
-
-    $contactUsDataSet->insertContactDetails($_POST);
-
-}
-
+$_REQUEST['Contact'];
 
 
 
