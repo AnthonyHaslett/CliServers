@@ -1,0 +1,72 @@
+<?php require('template/header.phtml') ?>
+
+<div class="container">
+<!---->
+       <input type="button" id="myButton" value="Click me">
+        <p>Output</p>
+    <!---->
+
+    <!---->
+   <script>
+
+       var xhr = new XMLHttpRequest();
+       xhr.open('GET', 'AJAX.php');
+
+       // Track the state changes of the request.
+       xhr.onreadystatechange = function () {
+           var DONE = 4; // readyState 4 means the request is done.
+           var OK = 200; // status 200 is a successful return.
+           if (xhr.readyState === DONE)
+           {
+               if (xhr.status === OK) {
+                   console.log(xhr.responseText); // 'This is the output.'
+               }
+               else
+               {
+                   console.log('Error: ' + xhr.status);
+                   // An error occurred during the request.
+               }
+           }
+       };
+
+
+       function onclickHandler(event) {
+//           alert('Button ' + this.id + ' has just been clicked');
+           xhr.send(null);
+       }
+       document.getElementById('myButton')
+           .addEventListener('click', onclickHandler, false);
+
+       // Send the request to send-ajax-data.php xhr.send(null);
+
+   </script>
+
+
+
+    <script>
+        function onclickHandler(event) {
+            document.getElementById('output').innerText = 'fetching...';
+
+            fetch('AJAX.php').then(function (response) {
+                return response.text(); }).then(function (data) {
+                document.getElementById('output').innerText = data;
+            }).catch(function (error) {
+                document.getElementById('output').innerText ='Error: ' + error;
+            });
+        }
+    </script>
+
+
+    <button id="goButton">Press me</button>
+    <p style="border : 1px solid blue; " id="output">Output</p>
+
+
+    <script>
+        document.getElementById('goButton').addEventListener('click', onclickHandler, false);
+    </script>
+
+    <!---->
+
+</div>
+<!-- /.container -->
+<?php require('template/footer.phtml') ?>
