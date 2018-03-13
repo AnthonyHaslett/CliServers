@@ -1,7 +1,7 @@
 <?php require('template/header.phtml') ?>
 
 <div class="container-fluid">
-    <div id="boxModel" class="col-xs-10 col-md-8 col-lg-8">
+<!--    <div id="boxModel" class="col-xs-10 col-md-8 col-lg-8">-->
 
         <div class="page-header">
             <h2>Browse</h2>
@@ -9,7 +9,7 @@
 
         <div class="row">
         <div id="filter">
-            <aside class="float-left">
+<!--            <aside class="float-right">-->
 
                 <form name="filter" method="GET" action="../browse.php">
 
@@ -71,7 +71,7 @@
                         <div class="btn-group">
 
                             <button type="submit" name="searchAll" class="btn btn-primary">Search all adverts</button>
-                            <button type="submit" name="low2high" value="low2high" class="btn btn-primary">Filter low to high (price)</button>
+                            <button type="submit" name="low2high" value="low2high" class="btn btn-primary"">Filter low to high (price)</button>
                             <button type="submit" name="high2low" value="high2low" class="btn btn-primary">Filter high to low (price)</button>
                             <button type="submit" name="titleASC" value="titleASC" class="btn btn-primary">Filter title (ASC)</button>
                             <button type="submit" name="titleDESC" value="titleDESC" class="btn btn-primary">Filter title (DESC)</button>
@@ -83,63 +83,73 @@
 
                         </div>
                 </form>
-            </aside>
+<!--            </aside>-->
 
 
         </div>
         </div>
 
-        <div class="pull-right">
 
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="AJAX">
 
 
                 <!--        For each loop to loop through advert data so that the user can view advert information.-->
 
+                <div class="row">
+<!--                    <div class="col-xs-4">-->
                 <?php foreach ($view->advertDataSet as $advertData) {
 
                     echo
 
-                        '<div class="col-sm-6 col-xs-12 col-md-8 col-lg-8">'.
+//                        '<div class="row">'.
 
-                        '<div class = "card" id="PHPcard">' .
+                        '<div class="col-xs-12 col-sm-6 col-lg-4">'.
+
+                        '<div class = "card">' .
 
 
-                        '<div class = "card-body" id="PHPcardbody">' .
+                        '<div class = "card-body" >' .
 
 
-                        '<h1 class="card-title" id="textCol"> Name of Car: ' . $advertData->getTitle() . '</h1>' .
+                        '<h1 class="card-title"> Name of Car: ' . $advertData->getTitle() . '</h1>' .
 
-                        '<h2 class="card-title" id="textCol"> Price:</h2>' .
+                        '<h2 class="card-title" > Price:</h2>' .
 
-                        '<p class="card-text" id="textCol">£' . $advertData->getPrice() . '</p>' .
+                        '<p class="card-text" >£' . $advertData->getPrice() . '</p>' .
 
                         '<img src="../images/' . $advertData->getPhotoName() . ' "  class="img-thumbnail" id="images"  alt="No Image Available." />' . '<br/>' .
 
-                        '<h2 class="card-title" id="textCol">Description: </h2>' .
+                        '<h2 class="card-title" >Description: </h2>' .
 
-                        '<p1 class="card-text" id="textCol"> ' . $advertData->getDescription() . '</p1>' . '<br/>' .
+                        '<p1 class="card-text" > ' . $advertData->getDescription() . '</p1>' . '<br/>' .
 
-                        '<h2 class="card-title" id="textCol">Color: </h2>' .
+                        '<h2 class="card-title" >Color: </h2>' .
 
-                        '<p1 class="card-text" id="textCol">' . $advertData->getColor() . '<p1/>' . '<br/>' .
+                        '<p1 class="card-text" >' . $advertData->getColor() . '<p1/>' . '<br/>' .
 
-                        '<p1 class="card-text" id="textCol"> Advert Id: ' . $advertData->getAdvertID() . '</p1>' . '<br/>' .
+                        '<p1 class="card-text"> Advert Id: ' . $advertData->getAdvertID() . '</p1>' . '<br/>' .
 
-                        '<p id="textCol">Click add to wish list to see owner details...</p>'.
+                        '<p>Click add to wish list to see owner details...</p>'.
 
                         '<a href="../wishlist.php?id=' . $advertData->getAdvertId() . ' " type="button" class="btn btn-primary">Add to wish list</a>'
 
 //                        '<a href="contactUs.php?id=' . $advertData->getFK_userID() . '" type="button" class="btn btn-primary">Contact Owner</a>'
 
 
+//                        . '</div>'
                         . '</div>'
                         . '</div>'
                         . '</div>'
-                        . '<p id="break">----------------------------------------------</p>'
+//                        . '<p id="break">----------------------------------------------</p>'
                     ;
                 }
                 ?>
+
+<!--                </div>-->
+                </div>
+
+
 
 <?php //foreach ($view->userDataSet as $userData) {
 //
@@ -220,34 +230,35 @@
 //'</div>'
 //. '<br/>'
 ?>
-        </div>
-                <div>
-                    <ul class="pagination pagination-sm">.
 
-<!--                        --><?php
-                        // Use default styling/automatic generation
-//                        echo $pagination->getLinksHtml("http://localhost/browse.php", "pg");
-//
-//                        // custom styling
-//                        for($i=1; $i<=$pagination->getNumPages(); $i++) {
-//                            echo 'test';
-//                        }
-//
-//                        ?>
-
-
-
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
-                </div>
 
             </form>
 
-</div>
+    <div>
+<!--        <ul class="pagination pagination-sm">.-->
+
+<!--            <!--                        --><?php
+//            // Use default styling/automatic generation
+//            //                        echo $pagination->getLinksHtml("http://localhost/browse.php", "pg");
+//            //
+//            //                        // custom styling
+//            //                        for($i=1; $i<=$pagination->getNumPages(); $i++) {
+//            //                            echo 'test';
+//            //                        }
+//            //
+//            //                        ?>
+<!---->
+<!---->
+<!---->
+<!--            <li><a href="#">1</a></li>-->
+<!--            <li><a href="#">2</a></li>-->
+<!--            <li><a href="#">3</a></li>-->
+<!--            <li><a href="#">4</a></li>-->
+<!--            <li><a href="#">5</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--</div>-->
     </div>
 </div>
 

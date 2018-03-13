@@ -54,7 +54,7 @@ elseif($_REQUEST['filterSubmit'] == 'filterSubmit'){
 
 
 
-    var_dump($_GET);
+//    var_dump($_GET);
     $view->advertDataSet = $advertDataSet->freeSearch($_GET);
 }
 

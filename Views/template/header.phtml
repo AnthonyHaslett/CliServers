@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Anthony Haslett stc687">
+
+<!--    Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../../images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<!--    Favicon END-->
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/my-style.css" rel="stylesheet">
+
+    <title>Adverts Website - <?php echo $view->pageTitle; ?></title>
+</head>
+
+
+<body role="document">
+
+<div class="container">
+
+        <div  class="row">
+            <div id="title" class="col-xs-12">
+<!--                <img id="logoIMG" src="images/cars-com.png" alt="Cars.com" />-->
+                <img id="logoIMG" src="../../../images/cars-com.png" alt="Cars.com" />
+                <div class="pull-right"> <h1><?php echo $view->pageTitle ?> </h1></div>
+            </div>
+        </div>
+
+
+    <div class="row">
+<!--        <nav class="navbar navbar-dark bg-dark" id="nav">-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="navbar-header">-->
+<!--                    <a class="navbar-brand" href="index.php">Cars.com</a>-->
+<!--                </div>-->
+<!--                <ul class="nav navbar-nav">-->
+<!--                    <li><a href="index.php">Home</a></li>-->
+<!--                    <li><a href="browse.php">Browse</a></li>-->
+<!--<!--                    <li><a href="postAdvert.php">Post Advert</a></li>-->
+<!--<!--                    <li><a href="wishlist.php">Wish list</a></li>-->
+<!--<!--                    <li><a href="contactUs.php">Contact us</a></li>-->
+<!--<!--                    <li><a href="../../login.php">Login</a></li>-->
+<!--<!--                    if the user is logged in, allow all access, no limited access.-->
+<!--                    --><?php
+//                     //   session_start();
+//                        if((isset($_SESSION['login_user']))){
+//                            echo '<li><a href="../../postAdvert.php">Post Advert</a></li>';
+//                            echo ' <li><a href="../../wishlist.php">Wish list</a></li>';
+//                            echo '<li><a href="../../contactUs.php">Contact us</a></li>';
+//                            echo '<li><a href="../../logout.php">Logout</a></li>';
+//                            echo '<li><a href="../../admin.php">Admin</a></li>';
+//                        }
+//                        else {
+//                            echo '<li><a href="../../login.php">Post Advert</a></li>';
+//                            echo ' <li><a href="../../login.php">Wish list</a></li>';
+//                            echo '<li><a href="../../login.php">Contact us</a></li>';
+//                            echo '<li><a href="../../login.php">Login</a></li>';
+//                            echo '<li><a href="../../login.php">Admin</a></li>';
+//                        }
+//                    ?>
+<!--<!--                    <li><a href="admin.php">Admin</a></li>-->
+<!--                </ul>-->
+
+<!--                <input type="text" name="search" id = "search_bar" placeholder="Search..">-->
+<!--<!--                <a href="login.php" class="btn btn-info" role="button">Sign in</a>-->
+<!--            </div>-->
+<!--        </nav>-->
+
+
+        <nav class="navbar navbar-inverse" >
+            <div class="container-fluid" id="nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../index.php">Cars.com</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../../index.php">Home</a></li>
+                        <li><a href="../../browse.php">Browse</a></li>
+
+                        <?php
+                        //   session_start();
+                        if((isset($_SESSION['login_user']))){
+                            echo '<li><a href="../../postAdvert.php">Post Advert</a></li>';
+                            echo ' <li><a href="../../wishlist.php">Wish list</a></li>';
+//                            echo '<li><a href="../../contactUs.php">Contact Seller</a></li>';
+                            echo '<li><a href="../../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
+
+
+                        if((isset($_SESSION['login_user']) == 18)){
+                            echo '<li><a href="../../admin.php">Admin</a></li>';
+                        }
+                        else{
+                            echo '<li><a href="#">Admin</a></li>';
+                        }
+
+                        }
+                        else {
+                            echo '<li><a href="../../login.php">Post Advert</a></li>';
+                            echo ' <li><a href="../../login.php">Wish list</a></li>';
+//                            echo '<li><a href="../../login.php">Contact Seller</a></li>';
+                            echo '<li><a href="../../login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+                            echo '<li><a href="../../login.php">Admin</a></li>';
+                        }
+                        ?>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+

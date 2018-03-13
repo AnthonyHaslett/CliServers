@@ -187,7 +187,7 @@ class AdvertDataSet
 //        //$search = htmlentities($_POST['freeSearchSubmit']);
         $search = $REQUEST['search'];
 
-        var_dump($search);
+//        var_dump($search);
 //        $search = trim($search);
 
         if($search !== '') {

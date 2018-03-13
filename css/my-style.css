@@ -114,11 +114,11 @@ img {
 }
 
 
-#PHPcard{
-    /*background-color: #3185fc;*/
-    margin-left: 5px;
-    padding: 1px;
-}
+/*#PHPcard{*/
+    /*!*background-color: #3185fc;*!*/
+    /*margin-left: 5px;*/
+    /*padding: 1px;*/
+/*}*/
 
 /*PHPcardbody{*/
     /*background-color: #403f4c;*/
@@ -127,9 +127,6 @@ img {
 
 #break{
     background-color: #403f4c;
-}
-#textCol{
-    color: white;
 }
 
 
