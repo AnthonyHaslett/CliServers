@@ -10,7 +10,7 @@ class AdvertData {
     /*
      Field variables.
      */
-    protected $_advertId, $_title, $_price, $_description, $_photoName, $_color ,$_FK_userID;
+    public $_advertId, $_title, $_price, $_description, $_photoName, $_color ,$_FK_userID;
 
     public function __construct($dbRow) {
         $this->_advertId = $dbRow['advertId'];

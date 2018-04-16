@@ -3,7 +3,7 @@
 //Require imports
 require('Database.php');
 require('AdvertData.php');
-require ('UserData.php');
+require('UserData.php');
 
 /*
  * This class performs logic that allows the system to run things such as SQL queries
@@ -25,7 +25,7 @@ class AdvertDataSet
     //A function to browse all adverts, using a parametre to decide which one to use
     public function browseAdverts($GET)
     {
-            if ($GET=='filterSubmit') {
+        if ($GET == 'filterSubmit') {
             $carMake = $GET['carDropMake'];
             $carPrice = $GET['carDropPrice'];
             $carColor = $GET['carDropColor'];
@@ -41,18 +41,18 @@ class AdvertDataSet
 
             $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
 
-                if ($statement->execute()) { //; // execute the PDO statement
-                    $dataSet = [];
-                    while ($row = $statement->fetch()) {
-                        $dataSet[] = new AdvertData($row);
-                        var_dump($dataSet);
-                    }
+            if ($statement->execute()) { //; // execute the PDO statement
+                $dataSet = [];
+                while ($row = $statement->fetch()) {
+                    $dataSet[] = new AdvertData($row);
                     var_dump($dataSet);
-                    return $dataSet;
-                } else {
-                    echo 'false';
                 }
+                var_dump($dataSet);
+                return $dataSet;
+            } else {
+                echo 'false';
             }
+        }
 
 //            $statement->execute(); // execute the PDO statement
 //            $dataSet = [];
@@ -65,7 +65,7 @@ class AdvertDataSet
 
 //        }
 
-        elseif($_GET=='low2high'){
+        elseif ($_GET == 'low2high') {
             $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.price ASC; ';
 //                        $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
 
@@ -78,55 +78,47 @@ class AdvertDataSet
 
             }
             return $dataSet;
-        }
-
-            elseif($_GET=='high2low'){
+        } elseif ($_GET == 'high2low') {
 
             $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.price DESC; ';
 //                $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
 
-                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-                $statement->execute(); // execute the PDO statement
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
 
-                $dataSet = [];
-                while ($row = $statement->fetch()) {
-                    $dataSet[] = new AdvertData($row);
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
 
-                }
-                return $dataSet;
             }
+            return $dataSet;
+        } elseif ($_GET == 'titleASC') {
 
-            elseif($_GET=='titleASC'){
+            $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title ASC';
 
-                $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title ASC';
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
 
-                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-                $statement->execute(); // execute the PDO statement
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
 
-                $dataSet = [];
-                while ($row = $statement->fetch()) {
-                    $dataSet[] = new AdvertData($row);
-
-                }
-                return $dataSet;
             }
+            return $dataSet;
+        } elseif ($_GET == 'titleDESC') {
 
-            elseif($_GET=='titleDESC'){
+            $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title DESC';
 
-                $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title DESC';
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
 
-                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-                $statement->execute(); // execute the PDO statement
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
 
-                $dataSet = [];
-                while ($row = $statement->fetch()) {
-                    $dataSet[] = new AdvertData($row);
-
-                }
-                return $dataSet;
             }
-
-        elseif($_GET=='freeSearchSubmit'){
+            return $dataSet;
+        } elseif ($_GET == 'freeSearchSubmit') {
 
             $sqlQuery = 'SELECT * FROM adverts ORDER BY adverts.title DESC';
 
@@ -182,16 +174,16 @@ class AdvertDataSet
     }
 
 
-    public function freeSearch($REQUEST)
+    public function freeSearch($get)
     {
 //        //$search = htmlentities($_POST['freeSearchSubmit']);
-        $search = $REQUEST['search'];
+        $search = $get;
 
 //        var_dump($search);
 //        $search = trim($search);
 
-        if($search !== '') {
-            $sqlQuery = "SELECT * FROM adverts  WHERE title LIKE '%$search%' OR price LIKE '%$search%' OR description LIKE '%$search%' OR color LIKE '%$search%'";
+        if ($search !== '') {
+            $sqlQuery = "SELECT * FROM adverts  WHERE title LIKE '%$search%' OR price LIKE '%$search%' OR description LIKE '%$search%' OR color LIKE '%$search%' LIMIT 5";
 
             $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
             $statement->execute(); // execute the PDO statement
@@ -202,14 +194,16 @@ class AdvertDataSet
                 $dataSet[] = new AdvertData($row);
 
             }
-            //var_dump($dataSet);
+//            $json = json_decode($dataSet);
+//            echo $dataSet;
             return $dataSet;
-        }
 
-        else{
+
+        } else {
             echo 'no data found';
         }
     }
+
 // HELP: https://codereview.stackexchange.com/questions/23160/mvc-example-form-post
 
     public function insertAdvert($POST)
@@ -245,11 +239,27 @@ class AdvertDataSet
     }
 
 
-    public function contactOwner($POST){
+    public function contactOwner($POST)
+    {
         $sqlQuery = 'SELECT adverts.advertId, adverts.title , adverts.description,users.username, users.email, users.mobileNo
                      FROM adverts
                      INNER JOIN users ON users.userId=adverts.FK_userId ';
 
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+        $statement->execute(); // execute the PDO statement
+
+        $dataSet = [];
+        while ($row = $statement->fetch()) {
+            $dataSet[] = new AdvertData($row);
+
+        }
+        return $dataSet;
+    }
+
+    public function getTitle()
+    {
+
+        $sqlQuery = 'SELECT * FROM adverts LIMIT 10';
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
 

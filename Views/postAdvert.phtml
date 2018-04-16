@@ -1,7 +1,7 @@
 <?php require('template/header.phtml') ?>
 
     <div class="container">
-        <div id="boxModel" class="col-xs-12">
+
 
         <div class="page-header">
             <h3>Post an ad!</h3>
@@ -10,11 +10,11 @@
         <p><strong>Please provide, a title, description, and an image of your product</strong></p>
         <form name="postAd" method="post" action="../postAdvert.php">
 
-        <div>
+        <div class="col-xs-12 col-sm-6 col-lg-4" id="formBackground">
             <!--                    <label>Make of Car<br>-->
             <!--                        <input type="text" name="title" required></label><br/>-->
 
-            <label for="carDropMake">Make of Car</label>
+            <label for="carDropMake">Make of Car</label> <br/>
             <select name="title" id="carDropMake">
 
                 <option disabled>Regular Cars</option>
@@ -65,14 +65,14 @@
             <!--                            <input type="text" name="photo_name" id="photo_name">-->
             <input type="file" value="Upload Image" name="photo_name">
             <!--                        </form>-->
-        </div>
+        </>
 
         <div>
             <input type="submit" name="submit" value="submit" class="btn btn-primary">
         </div>
         </form>
     </div>
-    </div>
+
 
 
 <?php require('template/footer.phtml') ?>

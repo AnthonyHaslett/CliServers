@@ -1,59 +1,33 @@
 <?php require('template/header.phtml') ?>
 
-<div class="container">
+
+<!--<div class="container">-->
+    <!--<div class="col-md-6">-->
+
+    <!--<h2>AJAX</h2>-->
+
+    <!--<form>-->
+        <!--<label class="control-label" for="lookUp">Find your next car</label>-->
+
+        <!--<div class="input-group">-->
+            <!--<input id="lookUp" type="text" onkeyup="results(this.value)">-->
+            <!--<span class="glyphicon glyphicon-search" style="margin:5px"></span>-->
+        <!--</div>-->
+
+        <!--<div id="results"></div>-->
+
+        <!--<script src="../js/AJAX.js"></script>-->
+
+    <!--</form>-->
+
+    <!--</div>-->
+<!--</div>-->
 
 
-    <!--<script>-->
-        <!--function onclickHandler(event) {-->
-            <!--document.getElementById('output').innerText = 'fetching...';-->
-
-            <!--fetch('AJAX.php').then(function (response) {-->
-                <!--return response.text(); }).then(function (data) {-->
-                <!--document.getElementById('output').innerText = data;-->
-            <!--}).catch(function (error) {-->
-                <!--document.getElementById('output').innerText ='Error: ' + error;-->
-            <!--});-->
-        <!--}-->
-    <!--</script>-->
 
 
-    <!--<button id="goButton">Press me</button>-->
-    <!--<p style="border : 1px solid blue; " id="output">Output</p>-->
-
-
-    <!--<script>-->
-        <!--document.getElementById('goButton').addEventListener('click', onclickHandler, false);-->
-    <!--</script>-->
-
-    <p>Start typing a name in the input field below:</p>
-
-    <form>
-        First name: <input type="text" onkeyup="showHint(this.value)">
-    </form>
-
-    <p>Suggestions: <span id="txtHint"></span></p>
-
-    <script>
-        function showHint(str) {
-            if (str.length == 0) {
-                document.getElementById("txtHint").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        var uic = document.getElementById("txtHint")
-                        uic.innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET", "AJAX.php?q=" + str, true);
-                xmlhttp.send();
-            }
-        }
-    </script>
-
-
-</div>
-<!-- /.container -->
 <?php require('template/footer.phtml') ?>
+
+
+
+
