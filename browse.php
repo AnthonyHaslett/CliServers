@@ -48,15 +48,15 @@ elseif($_REQUEST['titleDESC'] == 'titleDESC'){
 elseif($_REQUEST['filterSubmit'] == 'filterSubmit'){
     $_GET = 'filterSubmit';
     $view->advertDataSet = $advertDataSet->browseAdverts($_GET);
-} else if ($_REQUEST['freeSearchSubmit'] == 'getFreeSearch'){
-//    $_GET = 'freeSearchSubmit';
-    //$_REQUEST = 'freeSearchSubmit';
 
-
-
-//    var_dump($_GET);
-    $view->advertDataSet = $advertDataSet->freeSearch($_GET);
 }
+//else if ($_REQUEST['freeSearchSubmit'] == 'getFreeSearch'){
+//    $_GET = 'freeSearchSubmit';
+//    //$_REQUEST = 'freeSearchSubmit';
+//    $view->advertDataSet = $advertDataSet->freeSearch($_GET);
+//
+//    var_dump($_GET);
+//}
 
 
 else {
@@ -67,10 +67,12 @@ else {
 
 
 //Free search
-//if (isset ($_POST['freeSearchSubmit']) ){
-//    $_POST = 'freeSearchSubmit';
-//$view->advertDataSet = $advertDataSet->freeSearch($_POST);
-//}
+if ($_REQUEST['ajaxSearch']) {
+    $_GET = 'ajaxSearch';
+    $view->advertDataSet = $advertDataSet->freeSearch($_REQUEST);
+
+    var_dump($_REQUEST);
+}
 
 
 

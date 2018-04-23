@@ -131,30 +131,24 @@ class AdvertDataSet
 
             }
             return $dataSet;
+        } //Search by Id
+        elseif ($_GET == 'id') {
+
+            $search = $_GET['id'];
+            $sqlQuery = 'SELECT * FROM adverts WHERE advertId = ' . $search;
+
+            $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+            $statement->execute(); // execute the PDO statement
+
+            $dataSet = [];
+            while ($row = $statement->fetch()) {
+                $dataSet[] = new AdvertData($row);
+
+            }
+            var_dump($dataSet);
+            return $dataSet;
         }
 
-//            elseif($_GET=='freeSearchSubmit'){
-//
-////                $search = $_GET['freeSearchSubmit'];
-//                $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
-//
-////                $sqlQuery = "SELECT * FROM adverts  WHERE ('title' LIKE '%'.$search.'%')" ;
-//
-//
-//
-//                $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
-//                $statement->execute(); // execute the PDO statement
-//
-//                $dataSet = [];
-//                while ($row = $statement->fetch()) {
-//                    $dataSet[] = new AdvertData($row);
-//
-//                }
-//                return $dataSet;
-//            }
-
-
-        //        elseif(isset($POST[''])){
 //        }
         else {
 //            $sqlQuery = 'SELECT * FROM adverts WHERE advertId = 45';
@@ -180,7 +174,8 @@ class AdvertDataSet
         $search = $get;
 
 //        var_dump($search);
-//        $search = trim($search);
+        htmlentities($search);
+        $search = trim($search);
 
         if ($search !== '') {
             $sqlQuery = "SELECT * FROM adverts  WHERE title LIKE '%$search%' OR price LIKE '%$search%' OR description LIKE '%$search%' OR color LIKE '%$search%' LIMIT 5";

@@ -1,6 +1,6 @@
 <?php require('template/header.phtml'); ?>
 
-<div class="container">
+<div class="container-fluid">
 
     <h1><strong>Please login or sign up</strong></h1>
 
@@ -9,18 +9,17 @@
 
             <div id="loginBox">
                 <h3>Login</h3>
-                <label>Username:<br/>
+                <label>username:<br/>
                     <input type="text" name="username" class="form-control" required></label><br>
 
-                <label>Password:<br/>
+                <label>password:<br/>
                     <input type="password" name="password" class="form-control" required></label><br>
 
 
-                <!--                Make anti spam with java script-->
-                <label for="anti-spam">Prove you're human...<br/>
+                <label>Prove you're human...<br/>
                     <img src="../images/antispam.gif" id="captcha">
-                    <label for="captcha">Please enter the text in the image</label>
-                    <input type="text" name="anti-spam" class="form-control" id="anti-spam" required></label><br>
+                    <p>Please enter the text in the image</p>
+                    <input type="text" name="anti-spam" class="form-control" required></label><br>
 
 
                 <input type="submit" name="login" value="Login" class="btn btn-primary">
@@ -33,49 +32,38 @@
     <div class="col-xs-12 col-sm-6 col-lg-4" id="formBackground">
         <form name="signUp" method="POST" action="../login.php">
 
-
             <h3>Sign up</h3>
 
             <div class="form-group">
-                <label>Username:<br/>
+                <label>username:<br/>
                     <input type="text" name="username" class="form-control" required></label><br>
             </div>
 
             <div class="form-group">
-                <label>Password (8 minimum, 16 maximum. Lowercase, uppercase letters. At least one number):<br/>
-                    <input type="password" name="password" id="password" minlength="8" maxlength="16"
-                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" required></label><br>
-
-            </div>
-
-            <div class="form-group">
-                <label>Confirm password <br/>
-                    <input type="password" name="password" id="confirm_password" minlength="8" maxlength="16"
-                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" required></label><br>
-                <label> Show Password<input type="checkbox" onclick="showPassword()">
-
+                <label>password:<br/>
+                    <input type="password" name="password" class="form-control" required></label><br>
             </div>
 
             <div class="form-group">
 
-                <label>Email:<br/>
+                <label>email:<br/>
                     <input type="email" name="email" class="form-control" required></label><br>
             </div>
 
-            <label>Mobile Number (07 7777 777 77):<br/>
-                <input type="tel" name="mobileNo" class="form-control" required></label><br>
+            <label>Mobile Number (07 7777 777 77) 10 digits only:<br/>
+                <input type="number" name="mobileNo" class="form-control" required></label><br>
 
             <label>Address:<br/>
                 <input type="text" name="address" class="form-control" required></label><br>
 
             <label>Prove you're human...
                 <img src="../images/antispam.gif" id="captcha">
-                <p>Enter the text in the image</p>
+                <p>Please enter the text in the image</p>
                 <input type="text" name="anti-spam" class="form-control" required></label><br>
 
 
             <input type="submit" name="sign-up" value="sign-up" class="btn btn-primary">
-            <script src="../js/validation.js"></script>
+
         </form>
     </div>
 

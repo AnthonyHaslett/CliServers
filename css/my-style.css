@@ -25,6 +25,13 @@ White: #f5f5f5
     text-decoration: none;
     display: block;
 }
+
+#nav {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
 /*#menu a:hover {*/
     /*background-color: #403f4c;*/
     /*color: #ddd;*/
@@ -32,6 +39,9 @@ White: #f5f5f5
     /*display: block;*/
 /*}*/
 
+ul {
+    list-style-type: none;
+}
 
 #content {
     background-color: #fff;
@@ -40,7 +50,7 @@ White: #f5f5f5
 }
 
 #footer {
-    /*margin_top: 20px;*/
+
     text-align: center;
     background-color: #403f4c;
     color: #fff;
@@ -154,7 +164,16 @@ img {
 }
 
 .bottom{
+
     padding-bottom: 15%;
+
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#lookUp {
+
 }
 
 /*.overlay {*/
@@ -165,3 +184,47 @@ img {
     /*height: 50px;*/
     /*z-index:1000;*/
 /*}*/
+
+/*Back to top button*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #403f4c; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/*Make nav sticky*/
+/*.sticky {*/
+/*position: fixed;*/
+/*top: 5%;*/
+/*width: 100%*/
+/*}*/
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+/*.sticky + .content {*/
+/*padding-top: 102px;*/
+/*}*/
+
+/*Infinite scroll*/
+.page {
+    height: 900px;
+    border: solid 1px #ccc
+}
+
+#carArt {
+    border-radius: 8px;
+    max-height: 35em;
+}
