@@ -4,22 +4,7 @@
     <list default="true" id="3c882ea3-ef3c-4369-b003-e9060c5d491b" name="Default" comment="update">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/pageActions.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/validation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AJAX_handler.php" afterPath="$PROJECT_DIR$/AJAX_handler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/AdvertDataSet.php" afterPath="$PROJECT_DIR$/Models/AdvertDataSet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/AJAX.html" afterPath="$PROJECT_DIR$/Views/AJAX.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/admin.phtml" afterPath="$PROJECT_DIR$/Views/admin.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/browse.phtml" afterPath="$PROJECT_DIR$/Views/browse.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/index.phtml" afterPath="$PROJECT_DIR$/Views/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/login.phtml" afterPath="$PROJECT_DIR$/Views/login.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/postAdvert.phtml" afterPath="$PROJECT_DIR$/Views/postAdvert.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/template/footer.phtml" afterPath="$PROJECT_DIR$/Views/template/footer.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/template/header.phtml" afterPath="$PROJECT_DIR$/Views/template/header.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/browse.php" afterPath="$PROJECT_DIR$/browse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/my-style.css" afterPath="$PROJECT_DIR$/css/my-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/AJAX.js" afterPath="$PROJECT_DIR$/js/AJAX.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/AJAX_infiniteScroll.js" afterPath="$PROJECT_DIR$/js/AJAX_infiniteScroll.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,8 +42,8 @@
       <file leaf-file-name="AJAX_handler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AJAX_handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            <state relative-caret-position="414">
+              <caret line="23" column="62" lean-forward="false" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -68,21 +53,21 @@
         <entry file="file://$PROJECT_DIR$/Models/AdvertDataSet.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1892">
-              <caret line="181" column="59" lean-forward="false" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="59" />
+              <caret line="180" column="59" lean-forward="false" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="59" />
               <folding>
-                <marker date="1524432543000" expanded="true" signature="975:1070" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="2099:2147" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="2629:2678" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="3152:3200" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="3598:3647" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="4052:4101" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="4570:4608" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="4570:4609" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="5149:5170" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="5800:5943" ph="SELECT * FRO... adverts" />
-                <marker date="1524432543000" expanded="true" signature="7351:7528" ph="INSERT INTO adverts... " />
-                <marker date="1524432543000" expanded="true" signature="7868:8078" ph="SELECT adver... adverts" />
-                <marker date="1524432543000" expanded="true" signature="8447:8477" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="975:1070" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="2099:2147" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="2629:2678" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="3152:3200" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="3598:3647" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="4052:4101" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="4550:4588" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="4550:4589" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="5095:5116" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="5746:5889" ph="SELECT * FRO... adverts" />
+                <marker date="1524495880917" expanded="true" signature="7297:7474" ph="INSERT INTO adverts... " />
+                <marker date="1524495880917" expanded="true" signature="7814:8024" ph="SELECT adver... adverts" />
+                <marker date="1524495880917" expanded="true" signature="8393:8423" ph="SELECT * FRO... adverts" />
               </folding>
             </state>
           </provider>
@@ -133,6 +118,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Haslett Anthony &lt;stc687@leto.cs.salford.ac.uk&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -484,7 +474,7 @@
       <workItem from="1524313390919" duration="9679000" />
       <workItem from="1524401552406" duration="21562000" />
       <workItem from="1524491344338" duration="1118000" />
-      <workItem from="1524492470327" duration="3331000" />
+      <workItem from="1524492470327" duration="3439000" />
     </task>
     <task id="LOCAL-00001" summary="repeatable div">
       <created>1516873044331</created>
@@ -584,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523893379353</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update">
+      <created>1524495885698</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524495885698</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="562955000" />
+    <option name="totallyTimeSpent" value="563063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,6 +654,7 @@
     <MESSAGE value="js" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -986,6 +984,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="968">
           <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,21 +1007,21 @@
     <entry file="file://$PROJECT_DIR$/Models/AdvertDataSet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1892">
-          <caret line="181" column="59" lean-forward="false" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="59" />
+          <caret line="180" column="59" lean-forward="false" selection-start-line="180" selection-start-column="54" selection-end-line="180" selection-end-column="59" />
           <folding>
-            <marker date="1524432543000" expanded="true" signature="975:1070" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="2099:2147" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="2629:2678" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="3152:3200" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="3598:3647" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="4052:4101" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="4570:4608" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="4570:4609" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="5149:5170" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="5800:5943" ph="SELECT * FRO... adverts" />
-            <marker date="1524432543000" expanded="true" signature="7351:7528" ph="INSERT INTO adverts... " />
-            <marker date="1524432543000" expanded="true" signature="7868:8078" ph="SELECT adver... adverts" />
-            <marker date="1524432543000" expanded="true" signature="8447:8477" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="975:1070" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="2099:2147" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="2629:2678" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="3152:3200" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="3598:3647" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="4052:4101" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="4550:4588" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="4550:4589" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="5095:5116" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="5746:5889" ph="SELECT * FRO... adverts" />
+            <marker date="1524495880917" expanded="true" signature="7297:7474" ph="INSERT INTO adverts... " />
+            <marker date="1524495880917" expanded="true" signature="7814:8024" ph="SELECT adver... adverts" />
+            <marker date="1524495880917" expanded="true" signature="8393:8423" ph="SELECT * FRO... adverts" />
           </folding>
         </state>
       </provider>
@@ -1055,8 +1054,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AJAX_handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+        <state relative-caret-position="414">
+          <caret line="23" column="62" lean-forward="false" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
           <folding />
         </state>
       </provider>
