@@ -3,9 +3,13 @@
 <script src="../js/AJAX_infiniteScroll.js"></script>
 
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-sm-12 col-md-6 col-lg-4  ">
 
-        <h2>AJAX</h2>
+        <h2>Text search</h2>
+
+        <form name="ajax" method="GET" action="../browse.php">
+            <button type="submit" name="text" class="btn btn-success">Filter your search</button>
+        </form>
 
         <form autocomplete="off">
             <label class="control-label" for="lookUp">Find your next car</label>
@@ -26,13 +30,15 @@
     <!--<script src="../js/AJAX_infiniteScroll.js"></script>-->
 </div>
 
-<div class="container">
+<div class="container content-row" id="carResultsBackground">
+    <div class="row">
     <div id="scrollcontent">
 
         <div class="page">
 
         </div>
 
+    </div>
     </div>
 </div>
 

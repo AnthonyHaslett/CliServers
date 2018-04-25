@@ -63,14 +63,17 @@ class WishlistDataSet {
         return $dataSet;
     }
 
-    public function deleteFromWishList($fk_userId,$advertId) {
-        $advertId = $_GET["id"];
-        $fk_userId = $_SESSION['login_user'];
+    public function deleteFromWishList($wishlistId)
+    {
+//        $advertId = $_GET["id"];
+//        $fk_userId = $_SESSION['login_user'];
 
-        var_dump($advertId);
+        $id = $wishlistId;
+
+        var_dump($id);
 
 
-        $sqlQuery = "DELETE FROM wishlist WHERE fk_advertId = '$advertId' ";
+        $sqlQuery = "DELETE FROM wishlist WHERE fk_advertId = '$id' ";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement

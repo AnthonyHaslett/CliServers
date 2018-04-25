@@ -31,11 +31,14 @@
                         (DESC)
                     </button>
 
-
                 </div>
             </form>
 
-            <form name="searchBox" method="GET" action="../AJAX_handler.php">
+            <form name="ajax" method="GET" action="../AJAX.php">
+                <button type="submit" name="text" class="btn btn-success">Search by text</button>
+            </form>
+
+            <!--            <form name="searchBox" method="GET" action="../AJAX_handler.php">              -->
 
                 <!--                            Free text search-->
                 <!--                <input type="text" name="search" placeholder="Search..."/>-->
@@ -43,24 +46,25 @@
                 <!--                    Search <span class="glyphicon glyphicon-search"></span></button>-->
                 <!--                <label class="control-label" for="lookUp">Find your next car</label>-->
 
-                <div class="input-group">
-                    <input id="lookUp" autocomplete="off" type="text" placeholder="Search..."
-                           onkeyup="results(this.value)">
-                    <button type="submit" name="ajaxSearch" class="form-inline"><span class="glyphicon glyphicon-search"
-                                                                                      style="margin:5px"></span>
-                    </button>
+            <!--                <div class="input-group">-->
+            <!--                    <input id="lookUp" autocomplete="off" type="text" placeholder="Search..."-->
+            <!--                           onkeyup="results(this.value)">-->
+            <!--                    <button type="submit" name="ajaxSearch" class="form-inline"><span class="glyphicon glyphicon-search"-->
+            <!--                                                                                      style="margin:5px"></span>-->
+            <!--                    </button>-->
+            <!---->
+            <!--                    <div class="list">-->
+            <!--                        <ul>-->
+            <!--                            <li id="results"></li>-->
+            <!--                        </ul>-->
+            <!--                    </div>-->
+            <!---->
+            <!--                    <script src="../js/AJAX.js"></script>-->
+            <!--                </div>-->
+            <!---->
+            <!--                <br>-->
 
-                    <div class="list">
-                        <ul>
-                            <li id="results"></li>
-                        </ul>
-                    </div>
-
-                    <script src="../js/AJAX.js"></script>
-                </div>
-
-                <br>
-            </form>
+            <!--            </form>-->
         </div>
     </div>
 

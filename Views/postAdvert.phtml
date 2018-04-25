@@ -8,7 +8,7 @@
         </div>
 
         <p><strong>Please provide, a title, description, and an image of your product</strong></p>
-        <form name="postAd" method="post" action="../postAdvert.php">
+        <form name="postAd" method="POST" action="../postAdvert.php" enctype=multipart/form-data>
 
         <div class="col-xs-12 col-sm-6 col-lg-4" id="formBackground">
             <!--                    <label>Make of Car<br>-->
@@ -30,7 +30,7 @@
             <!--                <option value="Lambo"> Lambo</option>-->
             <!--                <option value="Ferrari"> Ferrari</option>-->
             <!--            </select>-->
-            <input type="text" name="title">
+            <input type="text" name="title" required>
             <br/>
 
             <label>Price(£) <br/>
@@ -52,7 +52,7 @@
                 <!--                    <option value="blue"> Blue</option>-->
                 <!--                </select>-->
 
-                <input type="text" name="color" placeholder="What color is your ride?">
+                <input type="text" name="color" placeholder="What color is your ride?" required>
 
             </div>
 
@@ -67,7 +67,7 @@
             <!--                        <form action="upload.php" method="post" enctype="multipart/form-data">-->
             Select image to upload:
             <!--                            <input type="text" name="photo_name" id="photo_name">-->
-            <input type="file" value="Upload Image" name="photo_name">
+            <input type="file" value="Upload Image" name="photo_name" required>
             <!--                        </form>-->
         </>
 

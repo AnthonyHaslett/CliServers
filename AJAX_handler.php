@@ -12,22 +12,16 @@ $advertDataSet = new AdvertDataSet();
 
 
 if(isset($_GET['query'])){
-
     //this is fine don't change
     $json = json_encode($advertDataSet->freeSearch($_GET['query']));
     print $json;
+
 } elseif (isset($_GET['id'])) {
     $json = json_encode($advertDataSet->freeSearch($_GET['id']));
     print $json;
+
 } else {
     $_GET = '';
     $json = json_encode($advertDataSet->browseAdverts($_GET));
     print $json;
 }
-
-
-
-
-
-
-

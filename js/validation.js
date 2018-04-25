@@ -1,3 +1,6 @@
+class Validation {
+}
+
 var password = document.getElementById("password")
     , confirm_password = document.getElementById("confirm_password");
 
@@ -27,3 +30,17 @@ function showPassword() {
         y.type = "password";
     }
 }
+
+function validateUser() {
+    var x = document.getElementById("userValid");
+
+    x.innerHTML = "<p>Username or password is incorrect, try again</p>";
+}
+
+function validateSpam() {
+    var x = document.getElementById("spamError");
+
+    x.innerHTML = "<p>Anti spam data is incorrect, try again</p>";
+}
+
+

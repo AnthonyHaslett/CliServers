@@ -4,11 +4,16 @@
 
     <h1><strong>Please login or sign up</strong></h1>
 
+    <p id="spamError"></p>
+
     <div class="col-xs-12 col-sm-6 col-lg-4" id="formBackground">
         <form name="login" method="POST" action="../login.php">
 
             <div id="loginBox">
                 <h3>Login</h3>
+
+                <p id="userValid"></p>
+
                 <label>Username:<br/>
                     <input type="text" name="username" class="form-control" required></label><br>
 
@@ -18,6 +23,7 @@
 
                 <!--                Make anti spam with java script-->
                 <label for="anti-spam">Prove you're human...<br/>
+
                     <img src="../images/antispam.gif" id="captcha">
                     <label for="captcha">Please enter the text in the image</label>
                     <input type="text" name="anti-spam" class="form-control" id="anti-spam" required></label><br>
@@ -69,12 +75,13 @@
                 <input type="text" name="address" class="form-control" required></label><br>
 
             <label>Prove you're human...
+
                 <img src="../images/antispam.gif" id="captcha">
                 <p>Enter the text in the image</p>
                 <input type="text" name="anti-spam" class="form-control" required></label><br>
 
 
-            <input type="submit" name="sign-up" value="sign-up" class="btn btn-primary">
+            <input type="submit" name="Sign Up" value="sign-up" class="btn btn-primary">
             <script src="../js/validation.js"></script>
         </form>
     </div>

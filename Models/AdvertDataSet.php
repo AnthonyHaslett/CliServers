@@ -10,7 +10,6 @@ require('UserData.php');
  *
  */
 
-
 class AdvertDataSet
 {
     protected $_dbHandle, $_dbInstance;
@@ -170,7 +169,6 @@ class AdvertDataSet
 
     public function freeSearch($get)
     {
-//        //$search = htmlentities($_POST['freeSearchSubmit']);
         $search = $get;
 
 //        var_dump($search);
@@ -204,29 +202,18 @@ class AdvertDataSet
     public function insertAdvert($POST)
     {
         $title = $POST["title"];
-//        echo $title;
         $price = $POST["price"];
         $color = $POST["color"];
         $description = $POST["description"];
-//        var_dump($_SESSION['login_user']);
-//        $FK_userId = 4;
-//    var_dump($POST);
         $FK_userId = $_SESSION['login_user'];
         $photo_name = $POST["photo_name"];
-
-//        $date_created = date("Y/m/d") . date("h:i:sa");
-//        $date_created = date('Y-m-d H:i:s','1299762201428');
-
-//        var_dump($date_created);
-
-//        $sqlQuery = "INSERT INTO adverts (title, price, description, FK_userId , photo_name, color, date_created) VALUES ('$title', $price,
-//                    '$description', $FK_userId, '$photo_name', '$color', '$date_created')";
 
         $sqlQuery = "INSERT INTO adverts (title, price, description, FK_userId , photo_name, color) VALUES ('$title', $price,
                     '$description', $FK_userId, '$photo_name', '$color')";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         if ($statement->execute()) { //; // execute the PDO statement
+
             echo '<h4>Advert Post Successful</h4>';
         } else {
             echo 'false';

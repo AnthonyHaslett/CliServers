@@ -228,3 +228,27 @@ img {
     border-radius: 8px;
     max-height: 35em;
 }
+
+#userValid {
+    color: red;
+}
+
+#spamError {
+    color: red;
+}
+
+.img-fluid {
+    border-radius: 5px;
+}
+
+#cardStyle {
+    padding: 2.5em;
+    margin-bottom: 5em;
+}
+
+#carResultsBackground {
+    background-color: #EEEEEE;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
